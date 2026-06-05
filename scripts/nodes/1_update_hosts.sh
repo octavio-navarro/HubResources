@@ -76,5 +76,6 @@ echo "Applying OpenStack service rules to UFW..."
 sudo ufw allow 65032
 sudo ufw deny 22
 sudo ufw allow from $CONTROLLER_IP to any port 5672 proto tcp
+sudo ufw allow 5900:5999/tcp
 
 echo "Environment preparation for $NODE_HOSTNAME is complete."
