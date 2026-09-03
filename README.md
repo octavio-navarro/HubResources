@@ -1,2 +1,2 @@
-# PrivateCloudResources
-Scripts and resources for managing a private cloud.
+# Hub resources
+Scripts and resources for managing a cybersecurity lab.
