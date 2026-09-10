@@ -1,0 +1,3 @@
+Pagina de ollama introduction API: https://docs.ollama.com/api/introduction
+
+Uses in javaScript: https://github.com/ollama/ollama-js 
