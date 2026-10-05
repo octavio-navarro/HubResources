@@ -1,82 +1,143 @@
+import os
+import secrets
+from functools import wraps
+
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import ollama
 
+
+# Cargar variables de entorno
+load_dotenv()
+
+
+# Configuración
+API_KEY = os.getenv("API_KEY")
+OLLAMA_HOST = os.getenv(
+    "OLLAMA_HOST",
+    "http://10.49.12.56:11434"
+)
+OLLAMA_MODEL = os.getenv(
+    "OLLAMA_MODEL",
+    "gemma3:latest"
+)
+FLASK_PORT = int(os.getenv("FLASK_PORT", "5000"))
+
+
+# Validar que exista la API Key
+if not API_KEY:
+    raise RuntimeError(
+        "No se encontró API_KEY en el archivo .env"
+    )
+
+
+# Crear aplicación Flask
 app = Flask(__name__)
-
-# Configuración de Ollama
-OLLAMA_MODEL = "gemma3:latest"
-OLLAMA_URL = "http://10.49.12.56:11434"
-
-# Inicializa Ollama
-try:
-    ollama_client = ollama.Client(host=OLLAMA_URL)
-
-    # Verifica que el modelo exista
-    ollama_client.show(OLLAMA_MODEL)
-
-    print("Conexión con Ollama establecida correctamente")
-
-except Exception as e:
-    print(f"Error initializing Ollama: {e}")
-    ollama_client = None
+CORS(app)
 
 
-@app.route('/')
+# Cliente de Ollama remoto
+client = ollama.Client(host=OLLAMA_HOST)
+
+
+# Middleware para validar la API Key
+def require_api_key(function):
+    @wraps(function)
+    def decorated_function(*args, **kwargs):
+
+        auth_header = request.headers.get("Authorization")
+
+        if not auth_header:
+            return jsonify({
+                "error": "Falta el encabezado Authorization"
+            }), 401
+
+        parts = auth_header.split(" ", 1)
+
+        if len(parts) != 2 or parts[0].lower() != "bearer":
+            return jsonify({
+                "error": "Formato de Authorization inválido"
+            }), 401
+
+        provided_key = parts[1].strip()
+
+        # Comparación segura de claves
+        if not secrets.compare_digest(provided_key, API_KEY):
+            return jsonify({
+                "error": "API Key inválida"
+            }), 401
+
+        return function(*args, **kwargs)
+
+    return decorated_function
+
+
+# Ruta pública para comprobar que Flask funciona
+@app.route("/", methods=["GET"])
 def home():
     return jsonify({
-        "message": "API funcionando correctamente"
-    })
-
-
-@app.route('/health', methods=['GET'])
-def health():
-    if ollama_client is None:
-        return jsonify({
-            "status": "down"
-        }), 503
-
-    return jsonify({
-        "status": "up"
+        "message": "API de chat funcionando"
     }), 200
 
 
-@app.route('/chat', methods=['POST'])
+# Ruta de salud protegida
+@app.route("/health", methods=["GET"])
+@require_api_key
+def health():
+    return jsonify({
+        "status": "ok",
+        "ollama_host": OLLAMA_HOST,
+        "model": OLLAMA_MODEL
+    }), 200
+
+
+# Ruta protegida para enviar mensajes a Ollama
+@app.route("/chat", methods=["POST"])
+@require_api_key
 def chat():
-    if ollama_client is None:
+
+    data = request.get_json(silent=True)
+
+    if not data:
         return jsonify({
-            "error": "Ollama no está inicializado correctamente"
-        }), 500
+            "error": "El cuerpo de la solicitud debe ser JSON"
+        }), 400
+
+    message = data.get("message", "").strip()
+    model = data.get("model", OLLAMA_MODEL)
+    temperature = data.get("temperature", 0.7)
+
+    if not message:
+        return jsonify({
+            "error": "El mensaje no puede estar vacío"
+        }), 400
 
     try:
-        data = request.get_json()
-
-        if not data or "message" not in data:
-            return jsonify({
-                "error": "Se requiere un mensaje"
-            }), 400
-
-        message = data["message"]
-
-        response = ollama_client.generate(
-            model=OLLAMA_MODEL,
-            prompt=message
+        response = client.generate(
+            model=model,
+            prompt=message,
+            options={
+                "temperature": temperature
+            }
         )
 
         return jsonify({
-            "response": response["response"]
-        })
+            "response": response["response"],
+            "model": model
+        }), 200
 
-    except Exception as e:
-        print(f"Error generating response: {e}")
+    except Exception as error:
+        print(f"Error al comunicarse con Ollama: {error}")
 
         return jsonify({
-            "error": f"Error al generar respuesta: {str(e)}"
+            "error": "No se pudo obtener una respuesta de Ollama"
         }), 500
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(
-        debug=True,
-        host='0.0.0.0',
-        port=5000
+        host="0.0.0.0",
+        port=FLASK_PORT,
+        debug=False
     )
