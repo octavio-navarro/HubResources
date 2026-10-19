@@ -73,15 +73,276 @@ Evaluate open-source security environments (VMs, cyber ranges, or containers) th
 
 ---
 
-### 2. [Tool Name 2]
-*(Follow the same structure as above)*
+### 2. Orion Range
+
+- **Type:** Cyber Range / Cyber Range Orchestrator
+- **Website:** https://github.com/eniokrauss/Orion-range
+- **License:** Apache License 2.0
+- **Open-Source:** ✅ Yes
+- **Replicable:** ⚠️ Medium
+- **Editable:** ✅ High
+
+- **Scenario Diversity:**
+  - **Scenario 1: Red Team vs. Blue Team**
+    - Diseñado para ejercicios de ataque y defensa en entornos controlados. El Red Team puede realizar pruebas de explotación, movimiento lateral, escalamiento de privilegios y simulación de exfiltración de datos. El Blue Team puede supervisar los eventos y responder a los ataques.
+  - **Scenario 2: Enterprise Network Simulation**
+    - Permite definir entornos empresariales con redes internas, servidores, hosts, segmentos DMZ, vulnerabilidades y componentes defensivos. Los escenarios pueden modelarse mediante planos de laboratorio (*Lab Blueprints*) y asociarse con técnicas de MITRE ATT&CK.
+
+- **Monitoring Support:**
+  - **Tool 1: SIEM / EDR / XDR**
+    - El README describe la posibilidad de desplegar infraestructura defensiva como SIEM, EDR/XDR, IDS/IPS y sistemas de registro de eventos. La integración y disponibilidad efectiva de estas herramientas dependen de la configuración y de los componentes desplegados.
+  - **Tool 2: Network Monitoring and Logging**
+    - Contempla supervisión de red, telemetría de firewall y registros de endpoints para apoyar las actividades de defensa. No debe interpretarse como evidencia de que todas estas herramientas vengan instaladas por defecto.
+
+- **OpenStack Compatibility:**
+  - **Deployment Method:** Integración potencial mediante adaptación del proveedor de hipervisor, máquinas virtuales de OpenStack y automatización de infraestructura.
+  - **Notes:**
+    - El repositorio documenta una arquitectura de aprovisionamiento de máquinas virtuales orientada principalmente a Proxmox.
+    - No se encontró evidencia suficiente de un adaptador nativo para OpenStack.
+    - Su uso en OpenStack podría requerir desarrollar o adaptar un proveedor de hipervisor y probar el aprovisionamiento, las redes y el restablecimiento de las máquinas virtuales.
+    - El proyecto se encuentra en desarrollo activo; algunas funcionalidades descritas están planificadas y no deben asumirse como completamente implementadas.
+
+- **Pros:**
+  - Código abierto bajo la licencia Apache 2.0.
+  - Diseñado para escenarios completos de Red Team y Blue Team.
+  - Permite definir laboratorios mediante archivos JSON/YAML.
+  - Busca facilitar la reproducción y el restablecimiento de entornos mediante snapshots.
+  - Integra el modelado de técnicas de MITRE ATT&CK.
+  - Arquitectura modular que permite ampliar componentes y escenarios.
+
+- **Cons:**
+  - Se encuentra en una fase activa de desarrollo.
+  - Su arquitectura está orientada principalmente a Proxmox, por lo que la compatibilidad con OpenStack no está confirmada.
+  - Puede requerir conocimientos de virtualización, redes y configuración de servicios.
+  - Algunas funcionalidades avanzadas, como el motor completo de escenarios y la generación asistida por IA, aparecen como futuras mejoras.
+  - La integración de SIEM, EDR/XDR y otras herramientas defensivas puede requerir configuración adicional.
+
+- **Final Score:** ⭐⭐⭐⭐☆ 4/5
+
+  **Justification:** Orion Range es prometedor para un proyecto universitario que busque simular entornos empresariales completos, ejercicios Red Team vs. Blue Team y escenarios basados en MITRE ATT&CK. Sin embargo, su estado de desarrollo y la falta de compatibilidad nativa confirmada con OpenStack reducen su puntuación para un despliegue inmediato.
+
+---`
+
+### 3. pwnthemall
+
+- **Type:** CTF Platform / Container-Based Cyber Range
+- **Website:** https://github.com/pwnthemall/pwnthemall
+- **License:** Apache License 2.0 with Commons Clause restriction
+- **Open-Source:** ⚠️ Source-available; Commons Clause restricts commercial sale
+- **Replicable:** ✅ High
+- **Editable:** ✅ High
+
+- **Scenario Diversity:**
+  - **Scenario 1: Docker-Based Hacking Challenges**
+    - Permite crear desafíos de ciberseguridad en contenedores Docker independientes. Cada reto puede incluir una aplicación, archivos, instrucciones, puertos de acceso y una bandera (flag) que los participantes deben encontrar.
+  - **Scenario 2: GeoINT Challenges**
+    - Permite crear retos de inteligencia geoespacial en los que los participantes deben identificar una ubicación en un mapa utilizando pistas y una descripción.
+  - **Additional Scenario: Multi-Container Challenges**
+    - Contempla retos que utilizan varios contenedores mediante Docker Compose. La documentación señala que este tipo de desafío está en desarrollo (WIP), por lo que su disponibilidad debe verificarse antes de implementarlo.
+
+- **Monitoring Support:**
+  - **Tool 1: CTF Scoreboard**
+    - La plataforma gestiona desafíos, puntuaciones y participación de equipos, permitiendo seguir el progreso de una competición.
+  - **Tool 2: Challenge Metadata Synchronization**
+    - Sincroniza los metadatos de los desafíos desde archivos YAML hacia el almacenamiento de la plataforma. Esto ayuda a mantener los retos organizados, pero no equivale a monitorización de red o detección de intrusiones.
+
+- **OpenStack Compatibility:**
+  - **Deployment Method:** Docker Compose dentro de una máquina virtual de OpenStack.
+  - **Notes:**
+    - La documentación oficial indica que Docker Compose es actualmente el método de instalación del proyecto.
+    - Puede desplegarse en una instancia Linux de OpenStack que tenga Docker y Docker Compose instalados.
+    - La documentación requiere también un cliente SSH y Bash.
+    - No se encontró evidencia de integración nativa con OpenStack ni de plantillas Heat oficiales.
+    - Para ejecutar desafíos Docker dentro de la plataforma, será necesario comprobar los requisitos de permisos, conectividad y acceso al motor Docker.
+    - Los retos que necesiten varios contenedores deben validarse por separado debido a su estado de desarrollo.
+
+- **Pros:**
+  - Código fuente disponible públicamente en GitHub.
+  - Instalación documentada mediante Docker Compose.
+  - Permite desplegar desafíos basados en Dockerfile.
+  - Soporta retos CTF estándar, Docker y GeoINT.
+  - Permite personalizar el frontend y backend.
+  - Incluye gestión de equipos, insignias y recompensas.
+  - Los desafíos pueden definirse mediante archivos YAML.
+  - Permite organizar retos con dependencias para establecer rutas de aprendizaje progresivas.
+
+- **Cons:**
+  - No está diseñado para simular por sí solo una infraestructura empresarial completa de Red Team vs. Blue Team.
+  - No ofrece integración nativa con OpenStack documentada.
+  - El soporte para desafíos multi-contenedor aparece como una funcionalidad en desarrollo.
+  - La instalación requiere conocimientos básicos de Linux, Docker Compose y configuración de servicios.
+  - La documentación del repositorio indica que el desarrollo está pausado temporalmente.
+  - La licencia incorpora Commons Clause, que restringe la venta comercial del software; debe revisarse antes de usarlo en un servicio comercial.
+
+- **Final Score:** ⭐⭐⭐⭐☆ 4/5
+
+  **Justification:** pwnthemall es una opción interesante para desplegar una plataforma CTF propia en una máquina virtual de OpenStack. Facilita la creación y administración de retos personalizados mediante Docker y YAML. Sin embargo, no sustituye un cyber range empresarial completo, no dispone de integración nativa confirmada con OpenStack y su licencia y estado de desarrollo deben considerarse antes de adoptarlo.
+  
+---
+
+### 4. VulnHub
+
+- **Type:** Virtual Machine (VM) / Vulnerable Lab
+- **Website:** https://www.vulnhub.com/
+- **License:** Varies by machine and original author
+- **Open-Source:** ⚠️ Varies by machine
+- **Replicable:** ✅ High
+- **Editable:** ⚠️ Medium
+
+- **Scenario Diversity:**
+  - **Scenario 1: Boot-to-Root Challenges**
+    - Máquinas virtuales vulnerables diseñadas para practicar reconocimiento, explotación de servicios, escalamiento de privilegios y obtención de acceso root. Algunas máquinas incluyen archivos de bandera (flags) que el participante debe encontrar.
+  - **Scenario 2: Vulnerable Services and Web Applications**
+    - Laboratorios que contienen servicios de red, servidores web, aplicaciones vulnerables y configuraciones inseguras. Los participantes pueden investigar las vulnerabilidades y practicar su explotación en un entorno controlado.
+
+- **Monitoring Support:**
+  - **Tool 1: Virtual Machine Logs**
+    - Los registros del sistema operativo invitado pueden utilizarse para analizar eventos y actividades, dependiendo de la máquina descargada y de las herramientas instaladas.
+  - **Tool 2: External Monitoring Tools**
+    - Se pueden instalar herramientas externas de monitorización, IDS o SIEM en una infraestructura de laboratorio para observar el tráfico y los eventos. VulnHub no proporciona una plataforma centralizada de monitorización propia.
+
+- **OpenStack Compatibility:**
+  - **Deployment Method:** Importación o conversión de imágenes de máquinas virtuales, cuando el formato y la licencia lo permitan.
+  - **Notes:**
+    - VulnHub ofrece máquinas virtuales en formatos como OVA, OVF, VMDK e ISO, según el laboratorio.
+    - OpenStack puede ejecutar máquinas virtuales a partir de imágenes compatibles con sus servicios de cómputo, pero algunas imágenes requieren conversión y ajustes.
+    - Las imágenes OVA/OVF no siempre se pueden importar directamente como una imagen lista para ejecutar; puede ser necesario extraer y convertir el disco.
+    - Se deben revisar el formato, los requisitos de arranque, la configuración de red y la licencia de cada máquina.
+    - No existe una integración nativa general de VulnHub con OpenStack.
+
+- **Pros:**
+  - Gran catálogo de máquinas virtuales vulnerables creadas por diferentes autores.
+  - Diversos niveles de dificultad, desde principiante hasta avanzado.
+  - Permite practicar ataques de red, explotación de servicios y escalamiento de privilegios.
+  - Las máquinas pueden descargarse y ejecutarse en entornos virtualizados compatibles.
+  - Algunas máquinas incluyen objetivos concretos, como encontrar flags o conseguir acceso root.
+  - Útil para laboratorios prácticos de ciberseguridad y aprendizaje individual.
+
+- **Cons:**
+  - No es una plataforma centralizada para orquestar cyber ranges.
+  - La licencia y las posibilidades de modificación dependen de cada máquina y de su autor.
+  - No todas las imágenes están preparadas para ejecutarse directamente en OpenStack.
+  - La calidad de la documentación, los objetivos y las instrucciones varía entre laboratorios.
+  - No incluye un sistema centralizado de puntuación, gestión de equipos o monitorización.
+  - Algunas máquinas pueden depender de versiones antiguas de sistemas operativos o software.
+
+- **Final Score:** ⭐⭐⭐⭐☆ 4/5
+
+  **Justification:** VulnHub es una buena fuente de máquinas virtuales vulnerables para crear laboratorios de ciberseguridad y practicar técnicas de explotación. Es útil para desplegar escenarios individuales en una infraestructura propia, aunque requiere trabajo adicional para integrarlos en OpenStack y no ofrece por sí solo la administración centralizada de un cyber range.
 
 ---
 
-### 3. [Tool Name 3]
-*(Follow the same structure as above)*
+### 5. Vikings: 1
+
+- **Type:** Virtual Machine (VM) / CTF Challenge
+- **Website:** https://www.vulnhub.com/entry/vikings-1,741/
+- **License:** Not specified on the VulnHub entry; check the author's terms.
+- **Open-Source:** ⚠️ Not confirmed
+- **Replicable:** ✅ High
+- **Editable:** ⚠️ Medium
+
+- **Scenario Diversity:**
+  - **Scenario 1: Boot-to-Root Challenge**
+    - Máquina Linux vulnerable diseñada para practicar reconocimiento de servicios, enumeración, explotación y escalamiento de privilegios hasta obtener acceso root.
+  - **Scenario 2: Web Enumeration and Digital Forensics**
+    - Incluye desafíos de enumeración web y análisis de archivos, con pistas que requieren identificar contenido codificado, extraer archivos y recuperar credenciales.
+
+- **Monitoring Support:**
+  - **Tool 1: Linux System Logs**
+    - Es posible revisar los registros del sistema Linux para analizar determinados eventos, dependiendo de la configuración de la máquina.
+  - **Tool 2: External Monitoring Tools**
+    - Se pueden añadir herramientas externas, como Wireshark, Zeek o un SIEM, para observar el tráfico y los eventos del laboratorio. Estas herramientas no vienen incluidas como parte de Vikings: 1.
+
+- **OpenStack Compatibility:**
+  - **Deployment Method:** Importación o conversión de la imagen de máquina virtual OVA a un formato compatible con OpenStack.
+  - **Notes:**
+    - La descarga oficial es `Vikings.ova`, de aproximadamente 1.7 GB.
+    - La máquina utiliza Linux y tiene DHCP habilitado para asignar automáticamente una dirección IP.
+    - El autor indica que funciona mejor con VirtualBox que con VMware.
+    - Para usarla en OpenStack, será necesario extraer o convertir el disco virtual y comprobar el formato, el controlador de almacenamiento, el arranque y la configuración de red.
+    - No existe una integración nativa con OpenStack documentada en la página de Vikings: 1.
+
+- **Pros:**
+  - Descarga disponible desde VulnHub.
+  - Incluye varios retos de hacking en una sola máquina.
+  - Permite practicar enumeración, explotación y escalamiento de privilegios.
+  - Es útil para ejercicios CTF individuales.
+  - Permite desarrollar habilidades de análisis de servicios y archivos.
+  - Puede utilizarse como base para un laboratorio aislado de ciberseguridad.
+
+- **Cons:**
+  - Está diseñado como una máquina individual, no como una plataforma de cyber range.
+  - No proporciona un sistema centralizado de puntuación ni gestión de equipos.
+  - No incluye herramientas de monitorización defensiva.
+  - La compatibilidad con OpenStack requiere adaptación y pruebas, ya que no incluye una guia.
+  - La licencia y las posibilidades de modificación no están confirmadas en la ficha del laboratorio.
+  - La página recomienda VirtualBox, por lo que podrían ser necesarios ajustes para otros hipervisores.
+
+- **Final Score:** ⭐⭐⭐☆☆ 3/5
+
+  **Justification:** Vikings: 1 es una buena máquina para practicar técnicas de hacking y retos CTF en Linux. Sin embargo, para un proyecto que necesita desplegar y administrar múltiples escenarios en OpenStack, requiere trabajo adicional de conversión, configuración y monitorización.
 
 ---
+
+### 6. StratoCyberLab
+
+- **Type:** Cyber Range / Docker Containers
+- **Website:** https://github.com/stratosphereips/stratocyberlab
+- **License:** GNU General Public License v2.0 (GPL-2.0)
+- **Open-Source:** ✅ Yes
+- **Replicable:** ✅ High
+- **Editable:** ✅ High
+
+- **Scenario Diversity:**
+  - **Scenario 1: Capture The Flag (CTF) Challenges**
+    - Ofrece retos locales de ciberseguridad que permiten practicar técnicas de reconocimiento, explotación y resolución de desafíos. Incluye una interfaz web para gestionar los retos y enviar flags.
+  - **Scenario 2: Network and Service Environments**
+    - Proporciona entornos de red y servicios predefinidos para actividades educativas de seguridad informática. Los contenedores comparten redes virtuales para permitir la interacción entre los servicios y la máquina de ataque.
+
+- **Monitoring Support:**
+  - **Tool 1: Web Dashboard**
+    - Permite gestionar los desafíos, iniciar o detenerlos y enviar flags. También ofrece acceso a una terminal WebSSH integrada.
+  - **Tool 2: Observability Plugin**
+    - El repositorio incluye un directorio `plugins/observability` para ampliar las capacidades de observación del laboratorio. Las funciones concretas disponibles dependen de la implementación del plugin; no debe asumirse que incluye un SIEM o IDS completo.
+
+- **OpenStack Compatibility:**
+  - **Deployment Method:** Docker Compose inside an OpenStack virtual machine.
+  - **Notes:**
+    - El README indica que StratoCyberLab está diseñado para ejecutarse localmente mediante Docker y que no ofrece despliegue cloud nativo.
+    - Puede probarse dentro de una instancia Linux de OpenStack instalando Docker y Git.
+    - La documentación estima como requisitos mínimos 3 GB de espacio en disco y 2 GB de RAM libre.
+    - El despliegue inicial se realiza mediante `docker compose up`.
+    - Se requiere acceso al motor Docker y configuración adecuada de las redes de contenedores.
+    - No se encontró evidencia de integración nativa con OpenStack, plantillas Heat oficiales ni un proveedor de aprovisionamiento específico.
+    - El README advierte que el dashboard necesita acceso al socket de Docker, lo que le otorga un elevado nivel de control sobre el host. Se recomienda ejecutarlo dentro de una VM aislada.
+
+- **Pros:**
+  - Código abierto bajo licencia GPL-2.0.
+  - Instalación sencilla mediante Docker Compose.
+  - Incluye desafíos CTF y entornos de red predefinidos.
+  - Dispone de interfaz web para administrar los retos.
+  - Incorpora una máquina de ataque en contenedor, separada del sistema anfitrión.
+  - Permite añadir plugins de terceros.
+  - El código fuente y los escenarios pueden estudiarse y modificarse.
+
+- **Cons:**
+  - Está diseñado principalmente para ejecutarse de manera local, no como servicio cloud nativo.
+  - No ofrece integración nativa confirmada con OpenStack.
+  - La ejecución simultánea de muchos desafíos puede consumir recursos importantes.
+  - El acceso al socket de Docker representa un riesgo de seguridad si el entorno no está aislado.
+  - No debe considerarse una plataforma SIEM o IDS completa sin integrar herramientas adicionales.
+
+- **Final Score:** ⭐⭐⭐⭐☆ 4/5
+
+  **Justification:** StratoCyberLab es una buena opción para un proyecto universitario que requiera retos CTF y escenarios de red reproducibles. Su despliegue mediante Docker Compose facilita la instalación dentro de una VM de OpenStack, aunque la plataforma no dispone de integración nativa con OpenStack y requiere aislamiento y configuración adicional para su uso en la nube.
+
+---
+
+[link 23: Official GitHub Repository — StratoCyberLab] (https://github.com/stratosphereips/stratocyberlab)
+[link 24: StratoCyberLab README] (https://github.com/stratosphereips/stratocyberlab/blob/main/README.md)
+[link 25: StratoCyberLab Development Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/development.md)
+[link 26: StratoCyberLab Plugins Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/plugins.md)
+[link 27: StratoCyberLab Docker Compose Configuration] (https://github.com/stratosphereips/stratocyberlab/blob/main/docker-compose.yml)
 
 ## Summary Table
 
@@ -104,7 +365,26 @@ Based on the evaluation, the recommended tool for deployment in OpenStack is:
 ---
 
 ## References
-- [Link 1:GitHub Repository] (https://github.com/juice-shop/juice-shop)
+- [Link 1: GitHub Repository juice-shop] (https://github.com/juice-shop/juice-shop)
 - [link 2: Official Documentation Juice-shop] (https://pwning.owasp-juice.shop/)
-- [link 3:OWASP Project Page, Juice-shop] (https://owasp.org/projects/juice-shop)
+- [link 3: OWASP Project Page, Juice-shop] (https://owasp.org/projects/juice-shop)
+- [link 4: Official GitHub Repository Orion-range] (https://github.com/eniokrauss/Orion-range)
+- [link 5: README Orion-range] (https://github.com/eniokrauss/Orion-range/blob/main/README.md)
+- [link 6: License Orion-range] (https://github.com/eniokrauss/Orion-range/blob/main/LICENSE)
+- [link 7: Roadmap Orion-range] (https://github.com/eniokrauss/Orion-range/blob/main/ROADMAP.md)
+- [link 8: GitHub Repository pwnthemall] (https://github.com/pwnthemall/pwnthemall)
+- [link 9: Installation Guide pwnthemall] (https://docs-pwnthemall.gitbook.io/pta/1-installation)
+- [link 10: Usage Guide pwnthemall] (https://docs-pwnthemall.gitbook.io/pta/3-usage)
+- [link 11: License pwnthemall] (https://github.com/pwnthemall/pwnthemall/blob/main/LICENSE)
+- [link 12: Official Website vulnhub] (https://www.vulnhub.com/)
+- [link 13: About VulnHub] (https://www.vulnhub.com/about/)
+- [link 14: Frequently Asked Questions vulnhub] (https://www.vulnhub.com/faq/)
+- [link 15: Official VulnHub Entry — Vikings: 1] (https://www.vulnhub.com/entry/vikings-1,741/)
+- [link 16: Vikings.ova vulnhub] (https://download.vulnhub.com/vikings/Vikings.ova)
+- [link 17: Vikings: 1 Walkthrough — NepCodeX] (https://nepcodex.com/2021/09/vikings-writeup-vulnhub-walkthrough/)
+- [link 18: Official GitHub Repository — StratoCyberLab] (https://github.com/stratosphereips/stratocyberlab)
+- [link 19: StratoCyberLab README] (https://github.com/stratosphereips/stratocyberlab/blob/main/README.md)
+- [link 20: StratoCyberLab Development Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/development.md)
+- [link 21: StratoCyberLab Plugins Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/plugins.md)
+- [link 22: StratoCyberLab Docker Compose Configuration] (https://github.com/stratosphereips/stratocyberlab/blob/main/docker-compose.yml)
 
