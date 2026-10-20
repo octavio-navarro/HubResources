@@ -131,7 +131,7 @@ Evaluate open-source security environments (VMs, cyber ranges, or containers) th
 
   **Justification:** Orion Range es prometedor para un proyecto universitario que busque simular entornos empresariales completos, ejercicios Red Team vs. Blue Team y escenarios basados en MITRE ATT\&CK. Sin embargo, su estado de desarrollo y la falta de compatibilidad nativa confirmada con OpenStack reducen su puntuación para un despliegue inmediato.
 
-\---`
+\---
 
 ### 3\. pwnthemall
 
@@ -447,21 +447,41 @@ Evaluate open-source security environments (VMs, cyber ranges, or containers) th
 
 \---
 
-# 
-
-# Summary Table
+# \# Summary Table
 
 |Tool Name|Type|Open-Source|Replicable|Editable|Scenario Diversity|Monitoring Support|OpenStack Compatibility|
 |-|-|-|-|-|-|-|-|
-|Tool 1|VM/Container|✅ Yes|⚠️ Medium|✅ High|High|✅ Yes|✅ High|
-|Tool 2|Cyber Range|✅ Yes|✅ High|⚠️ Medium|Medium|❌ No|⚠️ Medium|
-|Tool 3|Container|✅ Yes|✅ High|✅ High|Low|✅ Yes|✅ High|
+|OWASP Juice Shop|Web Application / Container|✅ Yes|✅ High|✅ High|High|⚠ Medium|⚠ Medium|
+|Orion Range|Cyber Range|✅ Yes|⚠ Medium|✅ High|High|⚠ Medium|⚠ Medium|
+|pwnthemall|CTF Platform / Container|⚠ Restricted|✅ High|✅ High|High|⚠ Medium|⚠ Medium|
+|VulnHub|Vulnerable VM Repository|⚠ Varies|✅ High|⚠ Medium|High|❌ No|⚠ Low|
+|Vikings: 1|VM / CTF|⚠ Unconfirmed|✅ High|⚠ Medium|Medium|❌ No|⚠ Low|
+|StratoCyberLab|Cyber Range / Container|✅ Yes|✅ High|✅ High|High|⚠ Medium|⚠ Medium|
+|Atomic Red Team|Attack Simulation / Testing|✅ Yes|✅ High|✅ High|High|⚠ Medium|⚠ Medium|
+|CTFd|CTF Management Platform|✅ Yes|✅ High|✅ High|High\*|⚠ Medium|⚠ Medium|
+
+\---
+
+## Docker Compatibility
+
+|Tool Name|Docker Compatibility|Deployment Method|Notes|
+|-|-|-|-|
+|OWASP Juice Shop|✅ Yes|Docker image|Se puede ejecutar directamente en un contenedor Docker y acceder a la aplicación web.|
+|Orion Range|⚠️ Partial|Mainly VM-based|Está orientado a desplegar un entorno de cyber range; no se debe asumir que todo el entorno funciona directamente con Docker.|
+|pwnthemall|✅ Yes|Docker / Docker Compose|Utiliza contenedores para desplegar la plataforma y sus retos compatibles.|
+|VulnHub|⚠️ Partial|VM images|Sus máquinas vulnerables suelen descargarse como imágenes de máquinas virtuales, no como contenedores Docker.|
+|Vikings: 1|❌ No directly|Virtual machine (OVA)|Se distribuye como una máquina virtual. Para ejecutarla con Docker habría que reconstruir el entorno; no basta con importar el archivo OVA.|
+|StratoCyberLab|✅ Yes|Docker Compose|Está diseñado para desplegar sus servicios y laboratorios con Docker Compose.|
+|Atomic Red Team|⚠️ Partial|Scripts on a test machine/container|Sus pruebas se ejecutan en un sistema compatible. Docker puede servir para algunas pruebas, pero no todas funcionan correctamente dentro de contenedores.|
+|CTFd|✅ Yes|Docker / Docker Compose|Se puede desplegar con Docker; los retos vulnerables pueden requerir contenedores o máquinas virtuales adicionales.|
 
 \---
 
 ## Recommendation
 
 Based on the evaluation, the recommended tool for deployment in OpenStack is:
+
+\---
 **\[OWASP juice shop]
 Reasoning:**
 
