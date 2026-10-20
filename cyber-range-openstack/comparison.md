@@ -338,13 +338,91 @@ Evaluate open-source security environments (VMs, cyber ranges, or containers) th
 
 ---
 
-[link 23: Official GitHub Repository — StratoCyberLab] (https://github.com/stratosphereips/stratocyberlab)
-[link 24: StratoCyberLab README] (https://github.com/stratosphereips/stratocyberlab/blob/main/README.md)
-[link 25: StratoCyberLab Development Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/development.md)
-[link 26: StratoCyberLab Plugins Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/plugins.md)
-[link 27: StratoCyberLab Docker Compose Configuration] (https://github.com/stratosphereips/stratocyberlab/blob/main/docker-compose.yml)
+### 7. Atomic Red Team
 
-## Summary Table
+- **Nombre de la herramienta:** Atomic Red Team
+- **Página web:** https://github.com/redcanaryco/atomic-red-team
+- **Licencia:** MIT
+- **Código abierto:** ✅ yes
+- **Replicable:** ✅ High
+- **Editable:** ✅ High
+
+- **Diversidad de escenarios:**
+  - **Escenario 1:** Pruebas de descubrimiento de redes para evaluar si las herramientas defensivas detectan actividades sospechosas de reconocimiento.
+  - **Escenario 2:** Pruebas de ejecución de procesos para evaluar si las herramientas defensivas detectan actividades sospechosas en el sistema.
+
+- **Soporte de monitoreo:** 
+  - **Herramienta 1:** Wazuh — recopilación de registros y generación de alertas de seguridad.
+  - **Herramienta 2:** Splunk — análisis de eventos y monitoreo de seguridad.
+  - *Nota: Estas herramientas de monitoreo no están incluidas en Atomic Red Team.*
+
+- **Compatibilidad con OpenStack:**
+  - **Método de despliegue:** Instalar y ejecutar Atomic Red Team dentro de una máquina virtual compatible desplegada en OpenStack.
+  - **Observaciones:** No cuenta con integración nativa documentada con OpenStack. La compatibilidad depende del sistema operativo de la máquina virtual, los permisos, las dependencias y los requisitos de cada prueba.
+
+- **Ventajas:**
+  - Pruebas basadas en técnicas de MITRE ATT&CK.
+  - Permite realizar pruebas de seguridad repetibles.
+  - Facilita la modificación de pruebas existentes y la creación de nuevas.
+  - Ayuda a evaluar antivirus, EDR y otros mecanismos defensivos.
+  - Puede utilizarse en máquinas virtuales alojadas en OpenStack.
+
+- **Desventajas:**
+  - No es una plataforma CTF tradicional.
+  - No proporciona un entorno completo de Red Team vs. Blue Team.
+  - No incluye un SIEM ni un panel completo de monitoreo propio.
+  - Algunas pruebas requieren permisos elevados o configuraciones adicionales.
+
+- **Puntuación final:** ⭐⭐⭐⭐☆ 4/5
+  
+  **Justificación:** Obtiene 4 de 5 estrellas porque ofrece pruebas reproducibles, modificables y basadas en técnicas reconocidas. Sin embargo, necesita herramientas externas para el monitoreo y una infraestructura adicional para construir un laboratorio completo de ciberseguridad.
+
+---
+### 8. CTFd
+
+- **Tool Name:** CTFd
+- **Type:** Plataforma de administración de competencias CTF (Capture The Flag).
+- **Website:** https://github.com/CTFd/CTFd
+- **License:** Apache-2.0
+- **Open-Source:** ✅ Yes
+- **Replicable:** ✅ High
+- **Editable:** ✅ High
+- **Scenario Diversity:**
+  - **Scenario 1:** Retos de explotación web en los que los participantes deben encontrar vulnerabilidades y obtener una bandera.
+- **Scenario 2:** Retos de criptografía o análisis forense digital en los que los participantes deben resolver un problema y presentar la bandera correspondiente.
+
+- **Monitoring Support:**
+  - **Tool 1:** Wazuh — recopilación de registros y generación de alertas de seguridad.
+  - **Tool 2:** Prometheus — recopilación de métricas de infraestructura y servicios.
+  - **Note:** Estas herramientas son complementarias y requieren una instalación independiente.
+
+- **OpenStack Compatibility:**
+  - **Deployment Method:** Deploy CTFd inside a Linux virtual machine on OpenStack using Docker or Docker Compose.
+  - **Notes:** No cuenta con integración nativa documentada con OpenStack. Los servidores, contenedores o máquinas vulnerables necesarios para los retos pueden requerir infraestructura adicional.
+
+- **Pros:**
+  - Facilita la organización de competencias CTF individuales o por equipos.
+  - Permite crear retos, pistas y banderas personalizadas.
+  - Incluye un marcador automático y estadísticas de progreso.
+  - Admite plugins y temas personalizados.
+  - Puede desplegarse en una máquina virtual alojada en OpenStack.
+
+- **Cons:**
+  - No proporciona por sí solo todas las máquinas vulnerables necesarias para los retos.
+  - No es una plataforma completa de simulación Red Team vs. Blue Team.
+  - No incluye un sistema propio de detección de intrusiones ni monitoreo completo de red.
+  - Los retos que requieren servicios o contenedores independientes necesitan configuración adicional.
+  - La integración con OpenStack requiere preparar la infraestructura.
+
+- **Final Score:** ⭐⭐⭐⭐☆ (4/5)
+
+  **Justification:** CTFd obtiene una puntuación de 4/5 porque es una plataforma de código abierto que permite administrar competencias CTF, personalizar retos y automatizar la puntuación de los participantes. Su despliegue mediante Docker facilita su instalación en una máquina virtual de OpenStack. Sin embargo, no proporciona por sí solo toda la infraestructura vulnerable ni herramientas completas de monitoreo, por lo que necesita componentes adicionales para construir un laboratorio de ciberseguridad más completo.
+
+---
+
+### Sources
+
+# Summary Table
 
 | Tool Name       | Type          | Open-Source | Replicable | Editable | Scenario Diversity | Monitoring Support | OpenStack Compatibility |
 |-----------------|---------------|-------------|------------|----------|--------------------|--------------------|-------------------------|
@@ -356,12 +434,30 @@ Evaluate open-source security environments (VMs, cyber ranges, or containers) th
 
 ## Recommendation
 Based on the evaluation, the recommended tool for deployment in OpenStack is:
-**[Tool Name]**
+**[OWASP juice shop]**
 **Reasoning:**
-- [Reason 1]
-- [Reason 2]
-- [Reason 3]
-
+- [Es facil de descargar y incluye como hacerlo]
+- [Tiene una gran cantidad de ejercicio de CTF y vulnerabilidades]
+- [Se pueden crear niveles propios]
+- [Tiene una facilidad para practicas con maquinas virtuales a travez de Docker]
+- [No tiene integracion nativa sino que es nesesario mediante maquina vitual y Docker]
+---
+**[StratoCyberLab]**
+- [Proporciona un laboratiorio practivo para CTF]
+- [tiene una web que gestiona tus logros y banderas capturados a travez de webSSH]
+- [Los codigos fuentes se pueden estudiar y modificarse]
+- [una desventaja seria que no esta hecho para cloud nativo sino que esta hecho para la red local y nesesita de maquina virtual y docker]
+---
+**[Atomic Red Team]**
+- [Es diferente a los demas porque prueba si las defensas se activan con ataques]
+- [Es un complemento para probar defensas de las otras plataformas]
+- [Se puede conbinar con otros como Cyber Range para crear escenarios]
+---
+**[CTFd]**
+- [Administra banderas, equipos, puntuaciones, y lo que hace el jugador]
+- [Puedes alojar CTFd a otros programas para que el programa tenga los beneficios de CFTd]
+- [Permite crear banderas, pistas y retos]
+- [Esta limitado en herramientras ya que no los trae consigo como lo son Wazuh, y Prometheus]
 ---
 
 ## References
@@ -387,4 +483,13 @@ Based on the evaluation, the recommended tool for deployment in OpenStack is:
 - [link 20: StratoCyberLab Development Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/development.md)
 - [link 21: StratoCyberLab Plugins Documentation] (https://github.com/stratosphereips/stratocyberlab/blob/main/docs/plugins.md)
 - [link 22: StratoCyberLab Docker Compose Configuration] (https://github.com/stratosphereips/stratocyberlab/blob/main/docker-compose.yml)
-
+- [link 22: Repositorio oficial de Atomic Red Team] (https://github.com/redcanaryco/atomic-red-team)
+- [link 23: Documentación oficial — Introducción Atomic Red Team] (https://www.atomicredteam.io/docs/atomic-red-team)
+- [link 24: Documentación oficial — Diseño de pruebas Atomic Red Team] (https://www.atomicredteam.io/docs/atomic-red-team/designing-atomic-tests)
+- [link 25: Preguntas frecuentes oficiales Atomic Red Team] (https://www.atomicredteam.io/docs/atomic-red-team/faq)
+- [link 26: Licencia del proyecto Atomic Red Team] (https://github.com/redcanaryco/atomic-red-team/blob/master/LICENSE.txt)
+- [link 27: Official CTFd GitHub Repository] (https://github.com/CTFd/CTFd)
+- [link 28: Official CTFd README] (https://github.com/CTFd/CTFd/blob/master/README.md)
+- [link 29: Official CTFd Getting Started Guide] (https://github.com/CTFd/CTFd/wiki/Getting-Started)
+- [link 30: Official CTFd Docker Image] (https://hub.docker.com/r/ctfd/ctfd)
+- [link 31: Official CTFd License] (https://github.com/CTFd/CTFd/blob/master/LICENSE)
