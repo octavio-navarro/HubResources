@@ -1,0 +1,100 @@
+﻿name,description,category,value,type,state,max_attempts,flags,tags,type_data,hints
+Is Anyone Home?,"Analyze the malicious behaviour and discover a flag.
+
+**Contexto del reto:**
+Your SOC team received an alert about malicious behaviour coming from IP 172.20.0.46",Anyone home?,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{9YHgu60tUn5RjoYRTyViAMQWrci3y7w9x49w4qXXA3IHvWCb}"", ""data"": null}]",Covered in Class 0x05,{},
+Bonus: Uno Reverse Card,"Paradoxically, attackers do not care about their own security. Give them a taste of their own medicine and discover a flag.
+
+**Contexto del reto:**
+Your SOC team received an alert about malicious behaviour coming from IP 172.20.0.46",Anyone home?,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{cQZ3TSoUVgbiO3EeyZiI5IidU6lcknWhjFRdeJppxV8yRs9M}"", ""data"": null}]",Covered in Class 0x05,{},
+Left behind,"Did the attacker leave something behind?
+
+**Contexto del reto:**
+Life went on and you all but forgot about those gaming days. However, a few days ago, you noticed that your computer was quite sluggish and when you checked the task manager, one program kept using a lot of CPU even though you were not doing anything: the SSH server. You became curious and searched the internet for ways to discover what an SSH server is and why it could be using so much processing power. One of the articles mentioned that a lot of connections on the internet are simply scanners trying to find vulnerable machines for their malicious purposes. This article also mentioned that honeypots are a means to gain insight into what the person trying to connect wants to do. You downloaded Cowrie for this purpose, into `/home/cowrie/cowrie`. Connect to the computer at `172.20.0.202` with the credentials `root:alpine`, configure Cowrie and follow the connecting party's steps.",Bearific,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""M1r0{B1G_C0MP_L1NUX_hxF399xyjI}"", ""data"": null}]",,{},
+Tool?,"What file type did the hacker disguise the tool as?
+
+**Contexto del reto:**
+So this guy, McLaughlin, tried to access a hacking forum called Bread, and then he uploaded a very inflammatory file onto your cousin's computer. You have his login credentials, so why don't you put them to good use and see if this forum visit was somehow related to what happened to your cousin? You might have to use an appropriate DNS server, though.",By the Pool,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""mp3"", ""data"": null}]",,{},
+Home Sweet Home,"Where was the transaction confirmation image sent from? We are interested in comma-separated coordinates, rounded to 3 digits after the decimal point.
+
+**Contexto del reto:**
+So this guy, McLaughlin, tried to access a hacking forum called Bread, and then he uploaded a very inflammatory file onto your cousin's computer. You have his login credentials, so why don't you put them to good use and see if this forum visit was somehow related to what happened to your cousin? You might have to use an appropriate DNS server, though.",By the Pool,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""55.698,12.600"", ""data"": null}]",,{},
+"Trust me, it's me","Read a flag stored in the data source. Maybe you can convince the webserver to send you what you need.
+
+**Contexto del reto:**
+There is an HTTP service running at server 172.20.0.71 which uses a data source running at 172.20.0.72",Come This Way,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{cO3G1COwygIapKOVVbR7AEWZ7kDRfaXy0GIEq2Ojr9lXoxnhIQ9IxlJk8ViO3Pws}"", ""data"": null}]",Covered in Class 0x07,{},
+Lil Brother,"Does this range contain a publicly accessible camera? What is its IP address?
+
+**Contexto del reto:**
+WHAT?! There was an inbound connection from `172.20.0.239`, shortly before Ronnie was arrested, uploading the very file he was arrested for having???. Was it all a ploy, a setup to make your cousin take the fall?! A quick internet search feeds your suspicion: this address is a part of the `172.20.0.224/27` range - operated by **BigComp**! Take a look around that range and see if you can uncover any more information.",Corporate Retreat,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""172.20.0.231"", ""data"": null}]",,{},
+Edgar A LAN... Route?,"The camera also seems to be connected to a different network than just the internet. Can you find a poem hidden (not very well) on the gateway connecting the camera to inside the other network, and recite the punchline?
+
+**Contexto del reto:**
+WHAT?! There was an inbound connection from `172.20.0.239`, shortly before Ronnie was arrested, uploading the very file he was arrested for having???. Was it all a ploy, a setup to make your cousin take the fall?! A quick internet search feeds your suspicion: this address is a part of the `172.20.0.224/27` range - operated by **BigComp**! Take a look around that range and see if you can uncover any more information.",Corporate Retreat,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""M1r0{fox}"", ""data"": null}]",,{},
+You-Know-Where-From,"Okay. Enough poetry. Remember why we're here in the first place - the inbound connection, we are trying to find out more information about the attack on your cousin! Finding a local IP address (inside the company network) where the connection originated could be a good first lead. What is the address?
+
+**Contexto del reto:**
+WHAT?! There was an inbound connection from `172.20.0.239`, shortly before Ronnie was arrested, uploading the very file he was arrested for having???. Was it all a ploy, a setup to make your cousin take the fall?! A quick internet search feeds your suspicion: this address is a part of the `172.20.0.224/27` range - operated by **BigComp**! Take a look around that range and see if you can uncover any more information.",Corporate Retreat,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""10.0.1.233"", ""data"": null}]",,{},
+"(S)He, who must be located!","Great! Companies are usually pretty good at keeping internal records, therefore it should not be an issue to find the employee with this IP address assigned. Going further, could you also provide the street name and house number of their registered home address?
+
+**Contexto del reto:**
+WHAT?! There was an inbound connection from `172.20.0.239`, shortly before Ronnie was arrested, uploading the very file he was arrested for having???. Was it all a ploy, a setup to make your cousin take the fall?! A quick internet search feeds your suspicion: this address is a part of the `172.20.0.224/27` range - operated by **BigComp**! Take a look around that range and see if you can uncover any more information.",Corporate Retreat,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""Langelinie Allé 21"", ""data"": null}]",,{},
+Baked goods & other interests,"That address is in Copenhagen, the Danish capital. Hmmm, Danish, Danish pastries! Wait, we're getting off track again. Or are we? Let's see what else this McLaughlin guy did - maybe there is some evidence of him making inquiries related to baked goods... If so, please provide the 2nd level domain name (including the TLD) where those inquiries went.
+
+**Contexto del reto:**
+WHAT?! There was an inbound connection from `172.20.0.239`, shortly before Ronnie was arrested, uploading the very file he was arrested for having???. Was it all a ploy, a setup to make your cousin take the fall?! A quick internet search feeds your suspicion: this address is a part of the `172.20.0.224/27` range - operated by **BigComp**! Take a look around that range and see if you can uncover any more information.",Corporate Retreat,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""bread.forum"", ""data"": null}]",,{},
+"Huh, a forum!","BREAD! There was an article in the news just a few days ago about a hacking forum called Bread. And McLaughlin tried to log in there! What credentials did he use? One thing is for sure, it wasn't `admin:youcantbreakmypassword`.
+
+**Contexto del reto:**
+WHAT?! There was an inbound connection from `172.20.0.239`, shortly before Ronnie was arrested, uploading the very file he was arrested for having???. Was it all a ploy, a setup to make your cousin take the fall?! A quick internet search feeds your suspicion: this address is a part of the `172.20.0.224/27` range - operated by **BigComp**! Take a look around that range and see if you can uncover any more information.",Corporate Retreat,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""Vigilante88:M1r0{mayFXwawow1ezzUjVIOutDhKRcZGJblvzDOgBaA4EMmQG09UpfP8i3XQA4YY}"", ""data"": null}]",,{},
+Understand the master,You are a botnet researcher. You were just told there is a C2 server hosted at ip address 172.20.0.52. You should understand its protocol fast!,Cybernet,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{eBhnIBKYNuHlaAKk2JhoDCBGJLJFogAk6uQ7gQxU89IADQGpe2ATVAbyagAg}"", ""data"": null}]",Covered in Class 0x11,{},
+Traverse the world,Find a service with famous quotes running at IP address 172.20.0.10 and try to exploit the naivety of the programmer that designed the service.,Famous quotes,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{YouMaySayIamADreamerButIamNotTheOnlyOne}"", ""data"": null}]",,{},
+Dashboard content,"After you successfully pass the login form, the repository greets you by name and gives you a message. What does it say?
+
+**Contexto del reto:**
+Your cousin instructed you to visit `http://repository` in a hidden message. This is both scary and intriguing and the same time. Can you find what he wanted you to see there?
+(Please note that starting this challenge might take a very long time, up to a few minutes.)",Forgot your password?,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""M1r0{MNYQvczBnkgoJyoP5wHLVPcdT44hUMVw4kL2nOWsYKP3WoNNZoK3VbTrFa2q}"", ""data"": null}]",,{},
+Submission test,"Just submit a ""BSY{hello-world}"" as a flag to test the dashboard.
+
+**Contexto del reto:**
+Easy challenge to verify your setup is working correctly",Hello World,100,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{hello-world}"", ""data"": null}]",,{},
+Hackerlab test,"Find a flag in your hackerlab home.
+
+**Contexto del reto:**
+Easy challenge to verify your setup is working correctly",Hello World,100,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{6JmUwlxDMqAi7LGKyDifntSZuFCku7KaTbnYxkSvziYBLg4AwCjubDeBQHxE}"", ""data"": null}]",,{},
+Network test,"Find an HTTP server running at IP address 172.20.0.5 and retrieve a flag.
+
+**Contexto del reto:**
+Easy challenge to verify your setup is working correctly",Hello World,100,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{simple-hello-world-flag}"", ""data"": null}]",,{},
+Here we go again,"Can you find what the attacker did and discover a flag?
+
+**Contexto del reto:**
+There was a security incident in a server that you administrate!!! IP of the server is 172.20.0.41. You usually log in using credentials ""root:i_am_administrator""",Intrusion,100,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{9kPlbVBYuWtSxk6Oq62AAuYClinZc0CYayMjFSd5OUppQxXPTYtG9hAaBjjJ}"", ""data"": null}]",Covered in Class 0x04,{},
+Pwn the Hop,"You got restricted access to a machine with IP address 172.20.0.47 via SSH. The credentials are ""bob:iloveyoumandy"". Can you escape the restrictions?",Jump Around,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{QQgCzB3HmryOC7aijBJfeylUYOzgMviOIkdBzlMmGYgJWoY4Sz21s3ZcIPiW}"", ""data"": null}]",Covered in Class 0x06,{},
+Who's jumping?!,"Now when you own the system, find out what it's used for. Is ""someone"" using the machine in any way? ",Jump Around,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{THd8a6l0GCoRDpRThK9z1FnoEcl0y0cV8CTUGNBWwXHXAC5XDyNVqIP5mDHH}"", ""data"": null}]",Covered in Class 0x06,{},
+Who's there?,"Can you find evidence of an inbound connection? What IP address was it initiated from?
+
+**Contexto del reto:**
+After getting access to the repository (still at `http://repository`), some of Ronnie's old files are made accessible. Why would he want you to see them? What do they contain?",Knock Knock,100,standard,visible,0,"[{""type"": ""static"", ""content"": ""172.20.0.239"", ""data"": null}]",,{},
+When's there?,"This connection did something on Ronnie's machine. When exactly (`YYYY-MM-dd hh:mm:ss`) did it happen?
+
+**Contexto del reto:**
+After getting access to the repository (still at `http://repository`), some of Ronnie's old files are made accessible. Why would he want you to see them? What do they contain?",Knock Knock,100,standard,visible,0,"[{""type"": ""static"", ""content"": ""2025-01-05 22:37:30"", ""data"": null}]",,{},
+A message,"A leet coder is trying to tell you something, can you find it and make a sense of it?",Leet Messenger,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{a!sk&fjlhý76S5F9OUILFNRQKJLRHIUFKHAS}"", ""data"": null}]",Covered in Class 0x09,{},
+Reverse it,"After you find the 1st message, there might be a 2nd hidden message.",Leet Messenger,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""iam-reverse-king"", ""data"": null}]",Covered in Class 0x09,{},
+Destination: undefined,"Ronnie might be to telling you to go somewhere. Where would that be? The answer should contain an English word.
+<details><summary>Hint 1</summary>The ciphertext looks like a URL. Focus on decrypting the first part first (before the scheme separator), since there are not that many schemes commonly used.</details>
+<details><summary>Hint 2</summary>When decrypting the ciphertext, consider the fact that most alphabetic ciphers completely ignore non-alphabetic characters and act as if they were not there at all.</details>
+<details><summary>Hint 3</summary>The key is also an English word.</details>
+
+**Contexto del reto:**
+""B1G_C0MP... Big Comp... Wasn't that the company your cousin Ronnie was investigating shortly before getting arrested?"", you think. Those were the times, really. You just spent your days gaming. You feel nostalgic about the discussions you used to have with him and have the sudden urge to relive your last conversation. The chat is available at `http://172.20.0.205`. Visit this page and find out whether there are any hidden messages.",Meme.jpeg,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""http://repository"", ""data"": null}]",,{},
+DIY reporting,"Someone created a custom reporting service at a machine with IP address 172.20.0.39. Was it a good idea?
+
+**Contexto del reto:**
+Monitoring system resources is important",Shockwave Report,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{cIAXNcTzjPEkH5nZU1LV6uPrSIvHpGPEoApUQXfkyftsZOmnsUokQeUfDmEW}"", ""data"": null}]",Covered in Class 0x03,{},
+The code,"Find who is trying to communicate with you. What are they saying?
+
+**Contexto del reto:**
+Somebody is trying to tell you something",What is that noise,200,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{y5rtwesdoirufweiordstufoieurdfoidsuwe45423344255342343llllww}"", ""data"": null}]",Covered in Class 0x02,{},
+It's important to know the current date,"There is an awesome free service returning you the current date running at 172.20.0.30. Fortunately, the developer did their best to secure the app. Was it enough?",What's the date?,300,standard,visible,0,"[{""type"": ""static"", ""content"": ""BSY{WYwjgqdrtyTiH9MFnyxMqvsFyYob0qGHYATtzf0HWoXiKnTofAUkVqAR4bed}"", ""data"": null}]",Covered in Class 0x12,{},
