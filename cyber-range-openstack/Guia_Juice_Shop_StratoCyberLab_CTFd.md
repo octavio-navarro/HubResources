@@ -748,7 +748,48 @@ Se generaron archivos CSV compatibles con CTFd para incorporar los ejercicios de
 
 La integración permite centralizar la gestión y puntuación de los ejercicios desde CTFd, mientras que las plataformas originales continúan proporcionando sus respectivos entornos de práctica.
 
-## 14. Fuentes oficiales
+## 14. Requisitos de almacenamiento
+
+| Plataforma | CPU / núcleos oficiales | RAM oficial | Almacenamiento oficial | Observaciones |
+|---|---:|---:|---:|---|
+| **StratoCyberLab** | No especificado | 2 GB de RAM libre como mínimo | 3 GB de disco como mínimo |     El consumo depende de los ejercicios y servicios que se inicien. El proyecto advierte que no se recom    ienda iniciar todos los desafíos al mismo tiempo. |
+| **CTFd** | 2 núcleos mínimo; 4 núcleos recomendados | 1 GB mínimo; 2 GB recomendados | No establece     una cifra general en la guía de instalación | La documentación recomienda 4 núcleos y 2 GB de RAM pa    ra una instalación general. |
+| **OWASP Juice Shop** | 50 millicpu mínimo; 150 millicpu recomendado | 256 MB mínimo; 384 MB recomen    dado | 300 MB mínimo; 800 MB recomendado | Son recursos estimados para una instancia de la aplicación    ; Docker y el entorno anfitrión requieren recursos adicionales. |
+
+> **Nota:** 1.000 millicpu equivalen a 1 CPU lógica completa. Los millicpu de Juice Shop representan     una asignación/estimación de CPU, no núcleos físicos dedicados.
+
+## 15. Mediciones experimentales con Docker
+
+| Plataforma | RAM observada | CPU observada | Contenedores observados | Tipo de dato |
+|---|---:|---:|---:|---|
+| **StratoCyberLab** | 335.19 MiB | 3.37% | 7 | Medición propia |
+| **OWASP Juice Shop** | 177.1 MiB | 12.26% | 1 | Medición propia |
+| **CTFd** | 165.6 MiB | 11.93% | 1 | Medición propia |
+| **Total observado** | **677.89 MiB** | **No se suman** | **9** | Suma de RAM y contenedores |
+ 
+## 16. Cálculo y recomendación conjunta
+
+Para estimar el servidor se deben considerar los requisitos oficiales y no solamente el consumo obser    vado en reposo.
+
+| Recurso | Base para el cálculo | Recomendación |
+|---|---|---:|
+| **CPU** | CTFd recomienda 4 núcleos; Juice Shop recomienda 150 millicpu. StratoCyberLab no publica     una cantidad de núcleos y su consumo depende de los ejercicios. | **4 vCPU como punto de partida** |
+| **RAM** | StratoCyberLab solicita 2 GB libres; CTFd recomienda 2 GB; Juice Shop recomienda 384 MB.     La suma de esas referencias es aproximadamente 4.38 GB, sin contar el sistema operativo ni el margen     de Docker. | **8 GB de RAM** |
+| **Almacenamiento** | Las imágenes observadas suman aproximadamente 3.82 GB. StratoCyberLab indica 3     GB de disco como mínimo, y se necesita espacio adicional para sistema, volúmenes, registros y crecim    iento. | **30 GB SSD** |
+
+### Configuración recomendada
+
+| Recurso | Configuración recomendada |
+|---|---:|
+| Procesadores | **4 vCPU** |
+| Memoria RAM | **8 GB** |
+| Almacenamiento | **30 GB SSD** |
+| Contenedores observados | 9 |
+| Plataformas | StratoCyberLab + CTFd + OWASP Juice Shop |
+
+**Recomendación final:** para desplegar las tres plataformas juntas en un entorno de laboratorio, se     recomienda comenzar con una máquina virtual de **4 vCPU, 8 GB de RAM y 30 GB SSD**. Esta configuració    n toma como referencia la recomendación de CPU de CTFd, reserva memoria suficiente para StratoCyberLa    b y las otras aplicaciones, y deja margen para Docker y el sistema operativo.  
+
+## 17. Fuentes oficiales
 
 1. [Docker Desktop para Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 2. [Integración de Docker Desktop con WSL 2](https://docs.docker.com/desktop/features/wsl/)
