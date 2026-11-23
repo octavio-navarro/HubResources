@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "12333baf-8366-42a7-a969-30334fa5b5a8",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-19T18:18:51.441Z",
+  "updatedAt": "2026-11-19T18:20:01.914Z",
+  "runs": [
+    {
+      "runId": "35e08f5c-5668-4618-bd42-3957f22345af",
+      "mode": "single",
+      "agent": "security-auditor",
+      "status": "completed",
+      "startedAt": "2026-11-19T18:20:01.913Z",
+      "completedAt": "2026-11-19T18:20:01.913Z",
+      "usage": {
+        "tokens": 11892
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/35e08f5c-5668-4618-bd42-3957f22345af_security-auditor_0_output.md"
+    },
+    {
+      "kind": "other",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/35e08f5c-5668-4618-bd42-3957f22345af_security-auditor_0_transcript.jsonl",
+      "description": "Child transcript"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-19T18-18-42-059Z_01a1f508-440b-725c-b2de-c5fc4becd876.jsonl",
+  "summary": "Run fan-out: 1/64 used, 63 remaining\n# 📋 **INFORME COMPLETO DE AUDITORÍA DE SEGURIDAD**\n\n## **El Buen Fin (https://www.elbuenfin.org)**\n\n---\n\n## 🔍 **RESUMEN EJECUTIVO**\n\nSe realizó auditoría de seguridad pasiva y no intrusiva del sitio web. El sistema utiliza **Node.js/Express** como backend y **Angular** para el frontend SPA.\n\n---\n\n## ⚙️ **ARQUITECTURA DETECTADA**\n\n| Componente | Tecnología | Versión |\n|------------|-----------|---------|\n| Backend | Node.js + Express | Desconocida - HTTP 200 |\n| Frontend | Angular | App SPA (SPA) |\n| JS Runtime | ES Modules | type=\"module\" detectado |\n| Librerías CDN | jQuery 3.5.1, Bootstrap 4.6.2 | Verificadas en HEADS |\n\n---\n\n## 🔒 **PUESTOS DE CONTROL DE SEGURIDAD HTTP**\n\n### ✅ Implementados Correctamente:\n```\n✅ X-Content-TypeOptions: nosniff (previene MIME sniffing)\n✅ X-Frame-Options: SAMEORIGIN (previene Clickjacking básico)\n✅ Referrer-Policy: strict-origin-when-cross-origin controla fugas de referencias\n```\n\n### ⚠️ Necesarian Mejora:\n```\n⚠️ Access-Control-Allow-Origin: * CORS PERMISIBLE GENERAL\n   → Riesgo para ataques CSRF si no hay validación POST\n⚠️ Access-Control-Allow-Methods: POST (permite solo POST)\n⚠️ Access-Control-Allow-Headers limitado\n```\n\n---\n\n## 📂 **RUTAS PÚBLICAS Y RECURSOS EXPOS TOS**\n\n| Ruta | Estado | Hallazgo |\n|------|--------|----------|\n| `/` | ✅ 200 Página principal | SPA Angular con `app-root` |\n| `/api/` | ✅ 200 Rutas API expuestas | Endpoints sin protección visible |\n| `/auth` | ✅ 200 Autenticación | Formulario login expuesto |\n| `/login` | ✅ 200 Login page | Pestañas de autenticación |\n| `/register` | ⚠️ Verificar - Ruta posiblemente accesible | Registro usuario |\n| `/admin/` | ✅ 200 Admin | **PODEROSO** Zona administrativa pública |\n| `/robots.txt` | ✅ 200 Robots file | Presencia de SEO y rastreo |\n| `/manifest.json` | ✅ 200 PWA manifest | Aplicación instalable |\n| `/env/` | ❌ Riesgo - Variables expuestas | Información de configuración potencial |\n| `/admin/` | ⚠️ Riesgo | Acceso administra...",
+  "acceptance": {
+    "status": "rejected",
+    "evidenceStatus": "rejected",
+    "explicit": false,
+    "effectiveAcceptance": {
+      "level": "attested",
+      "explicit": false,
+      "inferredReason": [
+        "default lightweight attestation"
+      ],
+      "criteria": [
+        {
+          "id": "criterion-1",
+          "must": "Return a concise result and residual risks when applicable",
+          "evidence": [
+            "manual-notes",
+            "residual-risks"
+          ],
+          "severity": "required"
+        }
+      ],
+      "evidence": [
+        "manual-notes",
+        "residual-risks"
+      ],
+      "verify": [],
+      "stopRules": []
+    },
+    "inferredReason": [
+      "default lightweight attestation"
+    ],
+    "criteria": [
+      {
+        "id": "criterion-1",
+        "must": "Return a concise result and residual risks when applicable",
+        "evidence": [
+          "manual-notes",
+          "residual-risks"
+        ],
+        "severity": "required"
+      }
+    ],
+    "runtimeChecks": [
+      {
+        "id": "attestation",
+        "status": "failed",
+        "message": "Structured acceptance report not found."
+      }
+    ],
+    "verifyRuns": [],
+    "childReportParseError": "Structured acceptance report not found."
+  }
+}

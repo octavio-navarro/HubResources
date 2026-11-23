@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "0ac4018a-f75d-4a34-bc70-2170e2ff80c1",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-05T16:54:28.098Z",
+  "updatedAt": "2026-11-05T16:54:48.236Z",
+  "runs": [
+    {
+      "runId": "7556f85f-bf0b-4097-ab55-0635c0472c50",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/7556f85f-bf0b-4097-ab55-0635c0472c50",
+      "status": "complete",
+      "startedAt": "2026-11-05T16:54:28.108Z",
+      "completedAt": "2026-11-05T16:54:48.235Z",
+      "usage": {
+        "tokens": 11498
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/7556f85f-bf0b-4097-ab55-0635c0472c50/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/7556f85f-bf0b-4097-ab55-0635c0472c50/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/7556f85f-bf0b-4097-ab55-0635c0472c50_security-auditor_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-05T16-53-32-392Z_01a1aca1-4467-771b-97a9-ae827af85e23.jsonl",
+  "summary": "security-auditor:\n### 🔐 Firefox `.pki` Directory - Secure View & File Analysis\n\nAfter reviewing your file structure, here's a breakdown of your security-related directories and files:\n\n```plaintext\n📁 /home/hub/.config/mozilla/firefox/krd66r43.default-release/\n    ├── pkcs11.txt              # PIV/Kerberos authentication certificate\n    └── key4.db                 # Encryption master keys\n        └── cert9.db            # Certificate database\n\n📁 /home/hub/.pki/nssdb/        # Additional NSS database storage\n    ├── cert9.db                # Certificate records (synced?)\n    ├── key4.db                 # Key container data\n    └── pkcs11.txt             # PIV authentication credentials\n\n📁 /home/hub/Kerberos/.pki/     (If exists)\n    └── kerberos.pfx            # Kerberos KDC auth cert (if present)\n```\n\n---\n\n### 🔍 Analysis & Observations:\n\n| Component | Location(s) | Purpose | Priority |\n|-----------|-------------|---------|----------|\n| **Key4** | `.config/mozilla/` & `/home/hub/.pki/nssdb/` | PIV authentication encryption keys | 🔴 HIGH |\n| **PKCS11** | Both locations | Kerberos/NIST authentication credentials | 🔴 CRITICAL |\n| **CertDB** | Firefox config & `/home/hub/.pki/` | Certificate storage (potentially redundant?) | ⚠️ MEDIUM |\n| **Firefox Config** | `.config/mozilla/firefox/` | All user session data including keys | 🟡 HIGH |\n\n---\n\n### ✅ Recommendations:\n\n1. **If you want redundancy protection:** Both locations could serve as backups if you plan to use the `.pki` directory for offline access.\n2. **If you're concerned about security:** Ensure both directories have appropriate file permissions set (600 or 700).\n3. **Consolidate only if needed:** Unless you're specifically migrating Firefox data or ensuring backup protection, keep these folders in their original locations unless they're causing conflicts or permission issues.\n\n---\n\n### 🔧 Backup & Secure Verification Commands:\n\n```bash\n# Verify file ownership and permissions\nsudo ls -la /home/hub/.config/mo"
+}

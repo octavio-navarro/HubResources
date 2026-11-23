@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "79fa8988-dad5-42eb-a66a-a13655535a71",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "failed",
+  "createdAt": "2026-11-05T17:23:31.302Z",
+  "updatedAt": "2026-11-05T17:23:31.306Z",
+  "runs": [],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [],
+  "receipts": [],
+  "cwd": "/home/user/poryecto",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-05T17-22-49-932Z_01a1acbc-15cb-75a1-836b-edb379894658.jsonl",
+  "summary": "Run fan-out: 1/64 used, 63 remaining\nFailed to start async run '6b42eb90-78ea-4454-b5f7-64349687ca87': Subagent launch aborted: cwd does not exist: /home/user/poryecto"
+}

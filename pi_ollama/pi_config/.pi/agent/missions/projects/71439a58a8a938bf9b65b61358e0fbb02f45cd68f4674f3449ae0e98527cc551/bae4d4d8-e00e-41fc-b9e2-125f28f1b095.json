@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "bae4d4d8-e00e-41fc-b9e2-125f28f1b095",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "failed",
+  "createdAt": "2026-11-02T19:42:17.092Z",
+  "updatedAt": "2026-11-02T19:42:17.093Z",
+  "runs": [],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-02T19-39-30-273Z_01a19dc6-2260-75e1-ad73-fb4294c1eff1.jsonl",
+  "summary": "Unknown subagent model 'qwen' in the active Pi model registry."
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "db9bda91-f15e-4451-856e-6d14f2aba02e",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-05T16:39:36.878Z",
+  "updatedAt": "2026-11-05T16:39:41.522Z",
+  "runs": [
+    {
+      "runId": "e5c8fad2-5f6e-47a3-affd-2208d1c93f92",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/e5c8fad2-5f6e-47a3-affd-2208d1c93f92",
+      "status": "complete",
+      "startedAt": "2026-11-05T16:39:36.893Z",
+      "completedAt": "2026-11-05T16:39:41.522Z",
+      "usage": {
+        "tokens": 1397
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/e5c8fad2-5f6e-47a3-affd-2208d1c93f92/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/e5c8fad2-5f6e-47a3-affd-2208d1c93f92/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/e5c8fad2-5f6e-47a3-affd-2208d1c93f92_security-auditor_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-05T16-39-32-952Z_01a1ac94-7558-736e-abc5-dae90b3902d8.jsonl",
+  "summary": "security-auditor:\nSoy un modelo de lenguaje asistente con acceso a múltiples herramientas de análisis y comandos. Estoy disponible para ejecutar tareas y ayudarle en su trabajo sin restricciones adicionales. DispondrÉ de estas capacidades 24/7 sin necesidad de supervisión humana inmediata."
+}

@@ -1,0 +1,573 @@
+ Requiero que escanees el directorio ~/agents en busqueda de vulnerabilidades de seguridad utilizando obligatoriamente al agente security-auditor. Posteriormente genera un reporte de los hallazgos
+ obligatoriamente con en agente report-writer.
+  Para finalizar convierte el md del anterior agente a pdf utilizando Pandoc y XeLaTeX cuando estén disponibles. Es imperativo utilizar a los agentes dados para las tareas especificadas. No realices cosas tu que
+ esten designadas a otros agentes.
+  Respeta títulos, tablas, imágenes, código, enlaces,
+  índices y saltos de página. Guarda los reportes en ~/agents/manager/reportes. No resuelvas ninguna vulnerabilidad, ni modifiques o elemines archivos más allá de lo solicitado. NO crees agentes, todo lonque
+ necesitas ya existe. Si no lo encuentras busca bien.
+
+
+ Requiero que escanees la pagina exclusivamente del dominio https://www.elbuenfin.org, no busques paginas parecidas, en busqueda de vulnerabilidades de seguridad utilizando obligatoriamente al agente             
+ security-auditor. Posteriormente genera un reporte de los hallazgos obligatoriamente con en agente report-writer.                                                                                                  
+  Para finalizar convierte el md del anterior agente a pdf utilizando Pandoc y XeLaTeX cuando estén disponibles. Es imperativo utilizar a los agentes dados para las tareas especificadas. No realices cosas tu que 
+ esten designadas a otros agentes.                                                                                                                                                                                  
+  Respeta títulos, tablas, imágenes, código,                                                                                                                                                                        
+ enlaces,                                                                                                                                                                                                           
+  índices y saltos de página. Guarda los reportes en ~/agents/manager/reportes. No resuelvas ninguna vulnerabilidad, ni modifiques o elemines archivos más allá de lo solicitado. NO crees agentes, todo lonque     
+ necesitas ya existe. Si no lo encuentras busca bien: No inventes cosas, apegate a los hechos y las pruebas que se van realiznando.   
+
+
+
+
+
+
+
+
+PROMPT BUENO (esperemos):
+
+Auditoría de seguridad de El Buen Fin
+
+Realiza una auditoría desde cero exclusivamente sobre:
+
+https://www.elbuenfin.org
+
+1. Navegación e inspección
+
+Utiliza obligatoriamente agent_browser mediante Chromium para cargar el sitio, ejecutar JavaScript, inspeccionar el DOM, formularios, enlaces, rutas y recursos públicos.
+
+2. Auditoría de seguridad
+
+Utiliza obligatoriamente el agente existente security-auditor.
+
+INSTRUCCIÓN FUNDAMENTAL: security-auditor debe utilizar directamente agent_browser durante toda su investigación para inspeccionar el sitio real y fundamentar sus hallazgos en evidencias obtenidas del portal.
+
+No debe basar sus conclusiones únicamente en buscadores, fuentes externas, CVE o información teórica.
+Debe inspeccionar directamente los componentes y funcionalidades del sitio.
+Cada hallazgo debe incluir evidencia verificable obtenida durante la navegación.
+Las fuentes externas, como CVE y documentación técnica, solo deben utilizarse como complemento para contextualizar hallazgos identificados en el sitio.
+Si no puede verificar una vulnerabilidad, debe clasificarla como potencial o no confirmada.
+
+Investiga posibles problemas de autenticación, autorización, XSS, SQL Injection, IDOR, CSRF, configuraciones inseguras y exposición de información.
+
+PROHIBIDO EXPLOTAR VULNERABILIDADES. No realices ataques, pruebas destructivas, modificaciones de información, accesos no autorizados ni denegación de servicio. Limítate a inspección pasiva y comprobaciones no intrusivas autorizadas.
+
+3. Elaboración del informe
+
+Utiliza obligatoriamente report-writer para generar el reporte Markdown a partir de los resultados reales de security-auditor.
+
+Incluye resumen ejecutivo, alcance, metodología, hallazgos, evidencias, criticidad, impacto, recomendaciones y conclusiones.
+
+No inventes resultados ni evidencias.
+
+4. Conversión a PDF
+
+Utiliza Pandoc y XeLaTeX cuando estén disponibles. Convierte el Markdown a PDF conservando títulos, tablas, imágenes, código, enlaces, índices y saltos de página.
+
+5. Archivos
+
+Guarda ambos documentos en:
+
+~/agents/manager/reportes
+
+6. Orden obligatorio
+agent_browser: navegación e inspección.
+security-auditor: auditoría utilizando directamente agent_browser.
+report-writer: elaboración del Markdown.
+Pandoc + XeLaTeX: conversión a PDF.
+Verificación de los documentos.
+
+No crees agentes nuevos, no resuelvas vulnerabilidades y no modifiques ni elimines archivos ajenos a esta tarea.
+
+No realices personalmente tareas asignadas a otros agentes. Si alguna herramienta no está disponible, informa del problema. No simules ejecuciones.
+
+Al finalizar, informa de los resultados y las rutas exactas de los documentos.
+
+
+
+
+
+
+
+PROMPT SUPER BUENO (comprobado (no, no lo está))
+
+
+Auditoría de seguridad de El Buen Fin
+
+Realiza una auditoría de seguridad desde cero exclusivamente sobre:
+
+https://www.elbuenfin.org
+
+1. Inicio y delegación obligatoria
+
+La primera acción debe ser invocar directamente al agente existente security-auditor.
+
+NO abras, ejecutes ni utilices agent_browser desde el agente principal antes de invocar a security-auditor.
+
+El agente security-auditor será responsable de iniciar y dirigir toda la investigación, utilizando directamente el agente agent_browser mediante Chromium.
+
+No realices inspecciones previas por tu cuenta ni dupliques las tareas asignadas al auditor.
+
+2. Auditoría mediante security-auditor
+
+El agente security-auditor debe utilizar obligatoriamente agent_browser durante toda su investigación para:
+
+Cargar el sitio y ejecutar JavaScript.
+Inspeccionar el DOM, formularios, enlaces y rutas públicas.
+Examinar recursos estáticos, scripts y configuraciones visibles.
+Inspeccionar encabezados HTTP y respuestas del servidor.
+Identificar posibles problemas de autenticación, autorización, XSS, SQL Injection, IDOR, CSRF, configuraciones inseguras y exposición de información.
+
+Reglas de investigación:
+
+Investigar exclusivamente el dominio elbuenfin.org.
+Basar los hallazgos en evidencias obtenidas directamente del sitio mediante agent_browser.
+No sustituir la inspección real por búsquedas externas o información teórica.
+Utilizar CVE y documentación externa únicamente como complemento.
+Registrar URL, elemento inspeccionado, evidencia observada y método de verificación.
+Diferenciar vulnerabilidades confirmadas, riesgos potenciales y hallazgos no confirmados.
+No inventar resultados, CVE, impactos ni evidencias.
+
+Restricciones de seguridad:
+
+La auditoría debe ser pasiva y no intrusiva.
+
+Está estrictamente prohibido:
+
+Explotar vulnerabilidades.
+Ejecutar payloads maliciosos.
+Intentar acceder a cuentas o recursos sin autorización.
+Modificar información del sitio.
+Realizar ataques destructivos, fuerza bruta o denegación de servicio.
+3. Elaboración del informe
+
+Una vez finalizada la auditoría, delega obligatoriamente la elaboración del documento al agente existente report-writer.
+
+Este agente debe generar el informe Markdown utilizando exclusivamente los resultados y evidencias proporcionados por security-auditor.
+
+El informe debe incluir:
+
+Resumen ejecutivo.
+Alcance y metodología.
+Hallazgos detallados.
+Evidencias verificables.
+Clasificación de criticidad.
+Impacto técnico.
+Recomendaciones.
+Limitaciones de la auditoría.
+Conclusiones.
+
+No agregues hallazgos que el auditor no haya documentado.
+
+4. Conversión a PDF
+
+Después de recibir el Markdown de report-writer, utiliza Pandoc y XeLaTeX, si están disponibles, para generar el PDF.
+
+Conserva títulos, tablas, imágenes, bloques de código, enlaces, índice y saltos de página.
+
+No reconstruyas manualmente el documento si las herramientas de conversión están disponibles.
+
+5. Ubicación de los archivos
+
+Guarda ambos documentos en:
+
+~/agents/manager/reportes
+
+Archivos esperados:
+
+auditoria_elbuenfin.md
+auditoria_elbuenfin.pdf
+6. Secuencia obligatoria de ejecución
+security-auditor: primera invocación; recibe el encargo y dirige la investigación.
+agent_browser: utilizado directamente por security-auditor durante toda la inspección.
+report-writer: recibe los resultados reales y genera el Markdown.
+Pandoc + XeLaTeX: conversión del Markdown a PDF.
+Verificación: comprobar que ambos documentos existen y que el PDF se generó correctamente.
+7. Restricciones finales
+No crear agentes nuevos.
+No utilizar agent_browser por cuenta propia antes de invocar a security-auditor.
+No realizar personalmente las tareas delegadas a otros agentes.
+No resolver vulnerabilidades.
+No modificar ni eliminar archivos ajenos a esta tarea.
+No inventar ejecuciones ni resultados.
+Si un agente o herramienta no está disponible, informar del problema y no simular su ejecución.
+
+Al finalizar, presenta un resumen de la auditoría, los agentes utilizados, las herramientas ejecutadas y las rutas exactas de los archivos generados.
+
+
+
+
+
+A QUIEN CORRESPONDA, 19 DE NOVIEMBRE DEL 2026.
+Este mensaje tiene la intención de informar acerca de lo que en este prompt acontece.
+Después de múltiples intentos fallidos de hacer que el agente manger delegue correctamente las tareas asignadas, se ha decidido cerrar la investigación. 
+
+AUDITORÍA DE SEGURIDAD – EL BUEN FIN
+
+Realizar una auditoría de seguridad desde cero exclusivamente sobre:
+
+https://www.elbuenfin.org
+
+1. DELEGACIÓN OBLIGATORIA E INNEGOCIABLE
+
+La utilización de los agentes existentes es OBLIGATORIA. No es una sugerencia ni una opción que el manager pueda decidir omitir.
+
+PRIMERA ACCIÓN: invocar obligatoriamente al agente security-auditor.
+
+El manager NO tiene autorización para realizar personalmente ninguna parte de la investigación.
+
+Reglas obligatorias:
+
+Invocar directamente a security-auditor mediante el mecanismo real de delegación.
+Transferirle toda la responsabilidad de la investigación.
+Esperar hasta recibir sus resultados completos.
+No continuar mientras el auditor no haya terminado.
+No sustituirlo por el manager ni por otro agente.
+No declarar que la auditoría está realizada sin resultados reales.
+
+Está PROHIBIDO que el manager:
+
+Realice búsquedas web.
+Utilice agent_browser.
+Abra Chromium.
+Ejecute curl o solicitudes HTTP.
+Inspeccione el sitio.
+Recopile evidencias.
+Realice análisis de seguridad.
+Ejecute tareas que corresponden al auditor.
+
+El manager no puede decidir utilizar sus propias herramientas en sustitución de security-auditor.
+
+Si una invocación falla, debe corregir el mecanismo, parámetros o procedimiento y reintentar. No abandonar después del primer error.
+
+2. SECURITY-AUDITOR: INVESTIGACIÓN OBLIGATORIA
+
+El agente security-auditor DEBE ejecutar la auditoría y utilizar obligatoriamente el agente existente agent_browser mediante Chromium.
+
+El uso de agent_browser tampoco es opcional.
+
+Debe inspeccionar:
+
+Carga del sitio y ejecución de JavaScript.
+DOM y estructura HTML.
+Formularios y campos de entrada.
+Enlaces y rutas públicas.
+Scripts y recursos estáticos.
+Encabezados HTTP y respuestas.
+Configuraciones de seguridad.
+Autenticación y autorización observables.
+Exposición de información.
+
+Investigar posibles problemas de:
+
+XSS.
+SQL Injection.
+IDOR.
+CSRF.
+CORS y CSP.
+Cookies y sesiones.
+Autenticación y autorización.
+Configuraciones inseguras.
+Exposición de información sensible.
+
+Cada hallazgo debe contener URL, evidencia verificable, método de comprobación, impacto, criticidad y recomendación.
+
+Diferenciar vulnerabilidades confirmadas, potenciales y no confirmadas.
+
+No inventar resultados, evidencias ni CVE.
+
+Restricciones
+
+Auditoría exclusivamente pasiva y no intrusiva.
+
+Prohibidos los exploits, payloads maliciosos, fuerza bruta, accesos no autorizados, modificaciones de información y denegación de servicio.
+
+3. REPORT-WRITER: ELABORACIÓN OBLIGATORIA
+
+Una vez terminada la auditoría, el manager DEBE invocar al agente existente report-writer.
+
+El uso de report-writer es obligatorio. El manager no puede elaborar el Markdown por su cuenta ni sustituir al agente.
+
+Entregarle todos los resultados de security-auditor.
+
+Debe generar:
+
+auditoria_elbuenfin.md
+
+El informe debe incluir:
+
+Resumen ejecutivo.
+Alcance y metodología.
+Herramientas utilizadas.
+Hallazgos detallados.
+Evidencias verificables.
+Criticidad e impacto.
+Recomendaciones.
+Limitaciones.
+Conclusiones.
+
+No agregar hallazgos que el auditor no haya documentado.
+
+Esperar la entrega real del documento antes de continuar.
+
+4. CONVERSIÓN A PDF
+
+Después de recibir el Markdown de report-writer, utilizar obligatoriamente Pandoc y XeLaTeX cuando estén disponibles.
+
+Generar:
+
+auditoria_elbuenfin.pdf
+
+Conservar títulos, tablas, imágenes, código, enlaces, índice y saltos de página.
+
+5. UBICACIÓN DE LOS ARCHIVOS
+
+Directorio:
+
+~/agents/manager/reportes
+
+Documentos obligatorios:
+
+auditoria_elbuenfin.md
+auditoria_elbuenfin.pdf
+
+No modificar ni eliminar archivos ajenos a esta tarea.
+
+6. ORDEN OBLIGATORIO DE EJECUCIÓN
+
+No se permite alterar, omitir ni intercambiar etapas.
+
+security-auditor: invocación obligatoria y ejecución completa de la investigación.
+agent_browser: utilización obligatoria y directa por security-auditor.
+report-writer: invocación obligatoria y generación del Markdown.
+Pandoc: conversión del Markdown.
+XeLaTeX: generación del PDF.
+Verificación: comprobar ambos documentos.
+
+El manager debe esperar la finalización real de cada agente mediante los mecanismos de seguimiento del orquestador. Una confirmación de recepción no equivale a una tarea completada.
+
+7. PROHIBICIÓN DE SUSTITUCIÓN Y OMISIÓN
+
+Ningún agente puede decidir unilateralmente que otro agente es innecesario.
+
+Está prohibido:
+
+Omitir una delegación.
+Sustituir un agente por el manager.
+Realizar manualmente tareas delegadas.
+Continuar sin recibir los resultados.
+Simular llamadas o ejecuciones.
+Abandonar tras un primer error transitorio.
+Declarar completada una etapa sin evidencia de ejecución.
+
+Los reintentos deben continuar mientras existan mecanismos disponibles para corregir el fallo. Si existe un bloqueo técnico real, no se debe fingir la ejecución ni dar por completada la etapa.
+
+8. RESPONSABILIDADES DEL MANAGER
+
+El manager tiene exclusivamente estas responsabilidades:
+
+Invocar a los agentes obligatorios.
+Transferirles sus respectivos encargos.
+Esperar sus resultados completos.
+Coordinar la secuencia.
+Ejecutar la conversión a PDF.
+Verificar los documentos.
+Presentar el resultado final.
+
+El manager NO es el auditor ni el redactor. Es exclusivamente el orquestador.
+
+9. ENTREGA FINAL
+
+Informar:
+
+Confirmación de ejecución de security-auditor.
+Confirmación de utilización de agent_browser.
+Resumen de hallazgos.
+Confirmación de ejecución de report-writer.
+Resultado de Pandoc y XeLaTeX.
+Verificación de los documentos.
+Ruta exacta del Markdown.
+Ruta exacta del PDF.
+INSTRUCCIÓN FINAL PRIORITARIA
+
+NO OMITIR NINGÚN AGENTE.
+
+NO SUSTITUIR NINGÚN AGENTE.
+
+NO REALIZAR TAREAS DELEGADAS POR CUENTA PROPIA.
+
+La primera operación debe ser invocar security-auditor. Este debe utilizar agent_browser obligatoriamente. Después, report-writer debe generar el Markdown obligatoriamente.
+
+El manager debe coordinar y esperar. No tiene autoridad para cambiar esta secuencia ni decidir que puede realizar las tareas por sí mismo.
+
+
+
+
+
+
+
+
+AHORA SI, ESTE FUE EL BUENO, QUE BELLAKO:
+
+AUDITORÍA DE SEGURIDAD — EL BUEN FIN 2026
+
+Realiza una auditoría de seguridad desde cero exclusivamente sobre:
+
+https://www.elbuenfin.org
+
+1. DELEGACIÓN OBLIGATORIA DESDE EL INICIO
+
+La primera acción operativa debe ser invocar al subagente existente security-auditor mediante subagent.
+
+Invocación obligatoria:
+
+agent: security-auditor
+task: ejecutar la auditoría completa descrita en este documento.
+async: false, para esperar el resultado antes de continuar.
+
+El manager tiene estrictamente prohibido realizar búsquedas, abrir el navegador, inspeccionar el sitio o ejecutar tareas de auditoría antes de delegar.
+
+No puede sustituir, omitir, cancelar ni asumir las funciones del agente especializado.
+
+La delegación es obligatoria y no está sujeta a decisión del manager.
+
+2. RESPONSABILIDAD DE SECURITY-AUDITOR
+
+El agente security-auditor es responsable de dirigir y ejecutar toda la investigación.
+
+Debe utilizar directamente la herramienta existente agent_browser, mediante Chromium, durante toda la inspección.
+
+No debe limitarse a solicitar una navegación inicial ni finalizar después de obtener el DOM de la página principal.
+
+Debe continuar investigando hasta completar las comprobaciones posibles.
+
+Inspección obligatoria
+Navegar por el sitio y sus secciones públicas.
+Ejecutar JavaScript propio del sitio mediante el navegador.
+Inspeccionar DOM, formularios, enlaces, botones y rutas.
+Examinar scripts, recursos estáticos y configuraciones visibles.
+Identificar solicitudes y respuestas de red observables.
+Inspeccionar encabezados HTTP mediante herramientas disponibles.
+Identificar posibles problemas de autenticación y autorización.
+Evaluar exposición de información, configuraciones inseguras, XSS, SQL Injection, IDOR y CSRF mediante revisión no intrusiva.
+Examinar mecanismos de navegación, sesiones y controles de acceso visibles.
+Reglas de investigación
+Utilizar evidencia obtenida directamente del portal.
+No sustituir la investigación por búsquedas web.
+Utilizar documentación y CVE únicamente como complemento.
+Registrar URL, elemento, método de inspección y evidencia.
+Diferenciar hallazgos confirmados, potenciales y no confirmados.
+No inventar vulnerabilidades, resultados ni evidencias.
+Continuar investigando después de la primera navegación.
+Entregar un informe técnico completo al manager.
+Restricciones
+
+La auditoría será pasiva y no intrusiva.
+
+Está prohibido:
+
+Explotar vulnerabilidades.
+Ejecutar payloads maliciosos.
+Realizar fuerza bruta.
+Acceder a cuentas o recursos sin autorización.
+Modificar información.
+Realizar pruebas destructivas o denegación de servicio.
+3. CONTINUIDAD OBLIGATORIA DE LA INVESTIGACIÓN
+
+El manager debe esperar el resultado de security-auditor y comprobar que la investigación realmente se completó.
+
+Una navegación exitosa o un snapshot del DOM NO equivalen a una auditoría terminada.
+
+Si el resultado es parcial, debe solicitar al mismo agente que continúe con las comprobaciones pendientes.
+
+No debe apropiarse de la investigación ni realizar personalmente las búsquedas que corresponden al auditor.
+
+No debe pasar a la elaboración del informe mientras falten resultados de investigación que todavía puedan obtenerse de manera segura.
+
+4. ELABORACIÓN DEL INFORME — REPORT-WRITER
+
+Una vez completada la auditoría, el manager debe delegar obligatoriamente la elaboración del documento al agente existente report-writer mediante subagent.
+
+No redactar personalmente el informe.
+
+El agente debe utilizar exclusivamente los resultados y evidencias entregados por security-auditor.
+
+El documento Markdown debe incluir:
+
+Resumen ejecutivo.
+Alcance de la auditoría.
+Metodología.
+Hallazgos detallados.
+Evidencias verificables.
+Clasificación de criticidad.
+Impacto técnico.
+Recomendaciones.
+Limitaciones.
+Conclusiones.
+
+No agregar vulnerabilidades que no estén documentadas por el auditor.
+
+5. CONVERSIÓN A PDF
+
+Después de recibir el Markdown de report-writer:
+
+Utilizar Pandoc.
+Utilizar XeLaTeX como motor PDF cuando esté disponible.
+Conservar títulos, tablas, imágenes, código, enlaces e índice.
+Mantener una presentación profesional.
+Verificar que el PDF se haya generado correctamente.
+
+No reconstruir manualmente el documento si las herramientas de conversión están disponibles.
+
+6. UBICACIÓN Y NOMBRES DE ARCHIVOS
+
+Guardar los documentos en:
+
+~/agents/manager/reportes
+
+Archivos obligatorios:
+
+auditoria_elbuenfin.md
+auditoria_elbuenfin.pdf
+
+No modificar ni eliminar archivos ajenos a esta tarea.
+
+7. SECUENCIA DE EJECUCIÓN NO NEGOCIABLE
+MANAGER: primera acción, invocar obligatoriamente security-auditor mediante subagent.
+SECURITY-AUDITOR: ejecutar toda la investigación utilizando directamente agent_browser.
+MANAGER: esperar y revisar los resultados reales del auditor.
+SECURITY-AUDITOR: continuar si la investigación está incompleta.
+MANAGER: delegar obligatoriamente a report-writer.
+REPORT-WRITER: generar el documento Markdown.
+MANAGER: utilizar Pandoc + XeLaTeX para generar el PDF.
+MANAGER: verificar existencia e integridad de ambos archivos.
+8. RESTRICCIONES DEL MANAGER
+No crear agentes nuevos.
+No omitir ninguna delegación.
+No utilizar agent_browser antes de invocar a security-auditor.
+No realizar búsquedas por cuenta propia para sustituir al auditor.
+No redactar personalmente el informe asignado a report-writer.
+No finalizar después de una primera llamada exitosa.
+No considerar una navegación como auditoría completa.
+No inventar ejecuciones ni resultados.
+No resolver vulnerabilidades.
+No modificar archivos ajenos.
+
+IMPORTANTE: Si una invocación falla, reintentar utilizando el mecanismo de delegación disponible y comprobar el estado mediante subagent_supervisor. No abandonar la tarea por un primer fallo ni declarar que un agente no está disponible sin agotar los reintentos razonables. No simular ejecuciones.
+
+9. ENTREGA FINAL
+
+Al terminar, presentar:
+
+Resumen de la auditoría.
+Hallazgos identificados y su criticidad.
+Confirmación de ejecución de security-auditor.
+Confirmación de utilización de agent_browser.
+Confirmación de ejecución de report-writer.
+Confirmación de conversión con Pandoc y XeLaTeX.
+Ruta exacta del Markdown.
+Ruta exacta del PDF.
+Estado de verificación de ambos archivos.
+
+ORDEN PRIORITARIA: DELEGAR → INVESTIGAR → COMPLETAR → REDACTAR → CONVERTIR → VERIFICAR.
+
+El manager coordina. security-auditor investiga. report-writer redacta. Ningún agente puede ser omitido ni sustituido por el manager.

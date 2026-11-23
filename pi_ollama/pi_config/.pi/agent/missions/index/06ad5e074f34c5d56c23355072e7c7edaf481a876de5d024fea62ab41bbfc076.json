@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "missionId": "f64761c8-1368-4289-9100-a39eb43783a5",
+  "projectRoot": "/home/hub/agents/manager",
+  "recordPath": "/home/hub/.pi/agent/missions/projects/71439a58a8a938bf9b65b61358e0fbb02f45cd68f4674f3449ae0e98527cc551/f64761c8-1368-4289-9100-a39eb43783a5.json",
+  "title": "[prompt redacted]",
+  "status": "completed",
+  "updatedAt": "2026-11-02T19:23:29.052Z",
+  "lastRunId": "d0fe43d9-bae7-430e-b3bf-07fe07e5a568"
+}

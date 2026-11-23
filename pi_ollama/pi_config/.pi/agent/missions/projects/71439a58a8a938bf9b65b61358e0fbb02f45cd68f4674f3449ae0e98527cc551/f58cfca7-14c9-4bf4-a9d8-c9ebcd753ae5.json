@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "f58cfca7-14c9-4bf4-a9d8-c9ebcd753ae5",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "failed",
+  "createdAt": "2026-11-05T17:53:06.718Z",
+  "updatedAt": "2026-11-05T17:53:35.763Z",
+  "runs": [
+    {
+      "runId": "747e2181-b872-49f4-ad71-50a4081de3af",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/747e2181-b872-49f4-ad71-50a4081de3af",
+      "status": "failed",
+      "startedAt": "2026-11-05T17:53:06.729Z",
+      "completedAt": "2026-11-05T17:53:35.763Z",
+      "usage": {
+        "tokens": 13711
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/747e2181-b872-49f4-ad71-50a4081de3af/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/747e2181-b872-49f4-ad71-50a4081de3af/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/747e2181-b872-49f4-ad71-50a4081de3af_security-auditor_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-05T17-52-52-746Z_01a1acd7-9809-7733-a966-131faae0c2e7.jsonl",
+  "summary": "security-auditor:\nbash failed (exit 1): (no output)\n\nCommand exited with code 1"
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "45874ca2-190d-4b38-aac3-07f6c7e5723e",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-05T16:51:43.711Z",
+  "updatedAt": "2026-11-05T16:52:35.982Z",
+  "runs": [
+    {
+      "runId": "07e95f16-cd8f-4adf-bfa3-a9f068517258",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/07e95f16-cd8f-4adf-bfa3-a9f068517258",
+      "status": "complete",
+      "startedAt": "2026-11-05T16:51:43.725Z",
+      "completedAt": "2026-11-05T16:52:35.982Z",
+      "usage": {
+        "tokens": 14077
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/07e95f16-cd8f-4adf-bfa3-a9f068517258/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/07e95f16-cd8f-4adf-bfa3-a9f068517258/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/07e95f16-cd8f-4adf-bfa3-a9f068517258_security-auditor_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-05T16-48-46-722Z_01a1ac9c-e882-769f-8ae2-8e664406a94c.jsonl",
+  "summary": "security-auditor:\n## 🔍 AUDITORÍA DE SEGURIDAD COMPLETA - /home/hub/agents/manager\n\n### 📊 RESUMEN EJECUTIVO\n\n| Categoría | Hallazgos | Estado |\n|-----------|-----------|--------|\n| Vulnerabilidades Críticas | 0 activas | ✅ APROBADOS |\n| Seguros Expuestos | 0 detectados | ✅ NINGUNO ENCONTRADO |\n| Dependencias Suspectas | Verificado - 0 | ✅ SALUDABLE |\n| Conflictos de Política | 1 (PAST vs CURRENT) | ⚠️ REQUIERE VERIFICACIÓN |\n\n---\n\n### 🛡️ HALLAZGOS DETECTADOS\n\n#### 1. 🔴 VULNERABILIDADES Y CONFIGURACIONES RIESGOSAS\n\n**SEC-005 | MEDIUM | POLICY_CONFLICT**\n```\nCONFICCTO: .AGENTSPAST.md ≠ AGENTS.md\n```\n- El archivo `.AGENTSPAST.md` (histórico) DIFIERE del `AGENTS.md` (actual)\n- `.AGENTSTEMP.md` es IGUAL al archivo `.AGENTSPAST.md`\n- **RIESGO**: Posible inconsistencia entre versiones de políticas activas\n\n**SEC-006 | INFO | POLICY_CONFLICT**\n```\nVARIABLE DE POLÍTICAS MODIFICADAS EN AGENTS.NETWORK:\n- Título actualiza: control version → VERSIÓN ACTUALIZADA (AGENTSP)\n- Sección agregada: \"Orquestación Autónoma\" con criterios automáticos\n- Sección modificada: Principios Fundamentales en negritas marcadas\n- Dirección más clara para rutas autorizadas\n```\n\n#### 2. 🟢 SEGURIDAD DE ARCHIVOS EXISTENTE\n\n- **Directorio /home/hub/agents/security-auditor/** (`drwx------`, octal `1700`):\n  - Alta seguridad (permisos restrictivos)\n  - ✅ APROBADO para auditoría de seguridad\n  \n- **Archivos en /home/hub/agents/manager/**:\n  - `AGENTS.md` (373 líneas, 24KB): ✅ Permisos correctos (`-rw-r--r--`)\n  - `.AGENTSPAST.md`: ✅ Consistente con políticas históricas\n  - `.AGENTSTEMP.md`: ⚠️ Identico al PAST pero debe coincidir con CURRENT\n\n#### 3. 🔐 SECRETOS Y CREDITALES\n\n| Tipo | Encontro | Estado |\n|------|----------|--------|\n| API Keys / Tokens | 0 expuestos | ✅ PROTECTADOS |\n| Passwords | 0 detectados | ✅ PROTECTADOS |\n| Private Keys | 0 expuestos | ✅ PROTECTADOS |\n| Credentials Configs | 0 detectados | ✅ PROTECTADOS |\n\n#### 4. 📦 DEPENDENCIAS Y CONFIGURACIÓN\n\n- **Ningún archivo de código fuente"
+}

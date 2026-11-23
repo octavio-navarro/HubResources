@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "876a6776-1691-450e-b0e6-31fb8039e5ac",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-19T16:15:51.748Z",
+  "updatedAt": "2026-11-19T16:17:18.141Z",
+  "runs": [
+    {
+      "runId": "93ea5ee6-9510-4aff-b71a-35aae5aa6126",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/93ea5ee6-9510-4aff-b71a-35aae5aa6126",
+      "status": "complete",
+      "startedAt": "2026-11-19T16:15:51.759Z",
+      "completedAt": "2026-11-19T16:17:18.141Z",
+      "usage": {
+        "tokens": 23735
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/93ea5ee6-9510-4aff-b71a-35aae5aa6126/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/93ea5ee6-9510-4aff-b71a-35aae5aa6126/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/93ea5ee6-9510-4aff-b71a-35aae5aa6126_security-auditor_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-19T15-53-09-355Z_01a1f483-03ea-7265-be08-fdaf49d4ab68.jsonl",
+  "summary": "security-auditor:\n## RESUMEN FINAL DE LA REAUDITORÍA: https://www.elbuenfin.org\n\n| # | Componente Crítico | Verificado por? | Estado Real | Evidencia Directa |\n|-----|----------|-----------|--------------|-------------------|\n| 1 | Apache HTTP Server 2.2.22 | curl headers/2026 | **FALSE POSITIVE** ✗ | NO \"Server:\" header presente; `x-powered-by: Express` confirmado (Node.js) |\n| 2 | Certificado TLS Expirado | openssl s_client | **FALSE POSITIVE** ✗ | notBefore=Nov 5, 2026; expira Feb 3, 2027 → VÁLIDO en contexto 2026 |\n| 3 | CVE-2013-5704 (PHP vulner.) | curl/x-powered-by | **FALSE POSITIVE** ✗ | NO \"X-Powered-By: PHP\"; backend es Node.js Express, no PHP vulnerable ejecuta |\n| 4 | CVE-2014-6768 / 5883 (Apache) | curl/Server header | **FALSE POSITIVE** ✗ | No hay Apache - vulnerabilidades Apache no aplican en Node.js stack |\n| 5 | CSP_NONCE_PLACEHOLDER | grep HTML source | ✅ **CONFIRMADO** ✓ | Múltiples instancias: jQuery, Bootstrap, Matomo, scripts, estilos Angular |\n| 6 | Mixed Content (HTTP/HTTPS) | curl + resource inspection | ✅ **SEGURO** ✓ | Todos cdns y recursos son HTTPS; NO HTTP resources detectados |\n| 7 | CVEs Apache Específicos | Server version check | **FALSE POSITIVE** ✗ | No Apache = no vulnerabilidades Apache aplicables |\n\n---\n\n### FALSOS POSITIVOS CORRIGIDOS (3/7):\n1. **Apache 2.2.22** - El sitio usa Node.js Express, NO Apache HTTP Server vulnerable\n2. **CVE-2013-5704 (PHP)** - No hay PHP en versión vulnerable ejecutando este backend  \n3. **CVE-2014-6768/5883 (Apache < 2.4.9)** - Estos CVE son Apache-específicos y NO aplican a Node.js\n\n---\n\n### HALLAZGO REAL CONFIRMADO (1/7):\n**CSP_NONCE_PLACEHOLDER** - Literal confirmada MULTIPLES INSTANCIAS en source HTML:\n- `nonce=\"CSP_NONCE_PLACEHOLDER\"` → jQuery, Bootstrap JS bundle, scripts principales  \n- `<style nonce=\"...\">` → CSS inline bloque personalizado  \n- `<script type=\"text/javascript\" nonce=\"...\">` → Matomo tracker  \n\n**NOTA**: Los placeholders bien implementan Angular CSP si se procesan en build-ti"
+}
