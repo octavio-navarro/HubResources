@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "2e5636bd-93a2-45f7-b897-dd08e99290fb",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "failed",
+  "createdAt": "2026-11-02T19:42:14.371Z",
+  "updatedAt": "2026-11-02T19:42:14.376Z",
+  "runs": [],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-02T19-39-30-273Z_01a19dc6-2260-75e1-ad73-fb4294c1eff1.jsonl",
+  "summary": "Unknown subagent model 'opus' in the active Pi model registry."
+}

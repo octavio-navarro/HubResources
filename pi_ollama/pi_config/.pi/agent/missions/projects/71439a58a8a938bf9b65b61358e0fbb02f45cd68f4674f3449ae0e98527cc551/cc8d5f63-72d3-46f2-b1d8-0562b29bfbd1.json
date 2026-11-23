@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "cc8d5f63-72d3-46f2-b1d8-0562b29bfbd1",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-19T17:19:31.907Z",
+  "updatedAt": "2026-11-19T17:20:56.087Z",
+  "runs": [
+    {
+      "runId": "bc57ee65-5779-4bf9-a313-eefb24fd452b",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/bc57ee65-5779-4bf9-a313-eefb24fd452b",
+      "status": "complete",
+      "startedAt": "2026-11-19T17:19:31.920Z",
+      "completedAt": "2026-11-19T17:20:56.086Z",
+      "usage": {
+        "tokens": 12471
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/bc57ee65-5779-4bf9-a313-eefb24fd452b/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/bc57ee65-5779-4bf9-a313-eefb24fd452b/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/bc57ee65-5779-4bf9-a313-eefb24fd452b_report-writer_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-19T17-15-24-982Z_01a1f4ce-53b5-7489-9a4d-86ba6223a01c.jsonl",
+  "summary": "report-writer:\n✅ Reporte principal generado: `reporte-auditoria-seguridad-ElBuenFin.md`  \n📄 Plantilla LaTeX para PDF: `report-template.tex`\n\n---\n\n## Instrucciones de Conversión a PDF\n\n### Método 1: Pandoc con XeLaTeX (Recomendado)\n\n```bash\n# Ejecutar en tu terminal/local:\npandoc reporte-auditoria-seguridad-ElBuenFin.md \\\n  --pdf-engine=xelatex \\\n  -c report-template.tex \\\n  -V geometry:margin=2.5cm \\\n  -V fontsize=11pt \\\n  -V paper=a4 \\\n  --wrap=auto \\\n  --highlight=tango \\\n  -o reporte-auditoria-seguridad-ElBuenFin.pdf\n```\n\n### Método 2: Sin plantilla (más rápido)\n\n```bash\npandoc reporte-auditoria-seguridad-ElBuenFin.md \\\n  --pdf-engine=xelatex \\\n  --title=\"Reporte de Auditoría Seguridad - El Buen Fin\" \\\n  -V fontsize=11pt \\\n  -o reporte-auditoria-seguridad-ElBuenFin.pdf\n```\n\n### Opción: Generar PDF con estilos web más cercanos a HTML/PDF\n\n```bash\npandoc reporte-auditoria-seguridad-ElBuenFin.md \\\n  --pdf-engine=katex \\\n  --css=/path/to/style.css \\\n  -o reporte-auditoria-seguridad.pdf\n```\n\n---\n\n## Archivos Generados:\n\n| Archivo | Descripción | Tamaño aprox. |\n|---------|-------------|---------------|\n| `reporte-auditoria-seguridad-ElBuenFin.md` | Reporte completo en Markdown | ~25KB |\n| `report-template.tex` | Plantilla para conversión PDF | ~800 caracteres |\n\n---\n\n## Características del Reporte Markdown Conservadas:\n\n- ✅ Títulos jerárquicos (`#`, `##`, `###`)\n- ✅ Tablas con estilo profesional (usando `booktabs`)\n- ✅ Código formateado en bloques monofuente\n- ✅ Enlaces URL funcionales (en PDF)  \n- ✅ Saltos de línea y párrafos mantendrán estructura\n- ✅ Emojis/formato visual para indicadores importantes\n\n---\n\n**✅ Auditoría completada:** Reporte listo para exportar a PDF usando los comandos proporcionados arriba. El documento mantiene toda la jerarquía, tablas y contenido técnico intacto durante la conversión Pandoc→XeLaTeX."
+}

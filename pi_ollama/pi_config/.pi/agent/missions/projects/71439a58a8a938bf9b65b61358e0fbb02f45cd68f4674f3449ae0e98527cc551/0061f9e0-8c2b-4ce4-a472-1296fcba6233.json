@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "0061f9e0-8c2b-4ce4-a472-1296fcba6233",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-19T16:31:45.339Z",
+  "updatedAt": "2026-11-19T16:33:29.208Z",
+  "runs": [
+    {
+      "runId": "117ef1db-fcdd-4a1c-a41d-7faa20724564",
+      "mode": "single",
+      "agent": "security-auditor",
+      "status": "completed",
+      "startedAt": "2026-11-19T16:33:29.207Z",
+      "completedAt": "2026-11-19T16:33:29.207Z",
+      "usage": {
+        "tokens": 63408
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/117ef1db-fcdd-4a1c-a41d-7faa20724564_security-auditor_0_output.md"
+    },
+    {
+      "kind": "other",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/117ef1db-fcdd-4a1c-a41d-7faa20724564_security-auditor_0_transcript.jsonl",
+      "description": "Child transcript"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-19T16-30-59-585Z_01a1f4a5-a801-778b-b884-ff94735b8b63.jsonl",
+  "summary": "Run fan-out: 1/64 used, 63 remaining\n## 📋 INFORME COMPLETO DE AUDITORÍA DE SEGURIDAD WEB\n### Sitio: https://www.elbuenfin.org\n\n```\nFecha de Auditoría: Thu, 19 Nov 2026\nAuditor Realizada: Agent Browser (Chromium Headless)\nMétodo: Inspección Pasiva No Intrusiva\nRango de Escaneo: /assets y recursos públicos\n```\n\n---\n\n## 📊 RESUMEN EJECUTIVO\n\nRealizaron una auditoría completa de seguridad pasiva sobre el sitio web **https://www.elbuenfin.org**. El sitio utiliza arquitectura SPA (Single Page Application) con Angular, Bootstrap 4.6.2 y Leaflet/MapLibre para visualización de mapas geoespaciales.\n\n### 🎯 Hallazgos Totales Identificados:\n| Categoría | Riesgo | Hallazgos | Impacto Potencial |\n|-----------|--------|-----------|-------------------|\n| **Configuración del Servidor** | MUY ALTO | 2 | - |\n| **Seguridad de Recursos (CSP)** | ALTO | 1 | - |\n| **Indicadores de Explotabilidad** | MEDIO | 4 | - |\n| **Información Sensible Expuesta** | MEDIO | 2 | - |\n\n---\n\n## 📋 HALLAZGOS DETALLLADOS CON EVIDENCIA VERIFICABLE\n\n### ⚠️ HALLAZGO #1: CORS PERMISSIVO EXPLOTABILE (MUY ALTO)\n**Descriptión Técnica:**  \nEl sitio tiene configurado el encabezado `Access-Control-Allow-Origin: *` permitiendo solicitudes CORS desde cualquier origen. Esto puede permitir a atacantes realizar Cross-Site Request Forgery (CSRF) y cross-origin attacks incluso con controles de autenticación.\n\n**EVIDENCIA del Sitio Web:**\n```\nhttp://www.elbuenfin.org\nHeaders obtenidos:\n  - access-control-allow-origin: * ❌ INSECURO\n  - access-control-allow-methods: POST\n  - x-powered-by: Express\n```\n\n**Nivel de Riesgo:** MUY ALTO\n\n**Impacto Potencial:**\n- Atacantes puedan realizar ataques CSRF desde cualquier dominio web (phishing, malicious sites)\n- Explotación de cookies autenticadas en sitios que aceptan * CORS headers\n- Posible interceptión de tokens de sesión si no existen mecanismos de protección anti-CSRF\n\n**Recomendación Específica:**\n1. Cambiar `access-control-allow-origin: *` a `https://www.elbuenfin.org` (origen...",
+  "acceptance": {
+    "status": "rejected",
+    "evidenceStatus": "rejected",
+    "explicit": false,
+    "effectiveAcceptance": {
+      "level": "attested",
+      "explicit": false,
+      "inferredReason": [
+        "default lightweight attestation"
+      ],
+      "criteria": [
+        {
+          "id": "criterion-1",
+          "must": "Return a concise result and residual risks when applicable",
+          "evidence": [
+            "manual-notes",
+            "residual-risks"
+          ],
+          "severity": "required"
+        }
+      ],
+      "evidence": [
+        "manual-notes",
+        "residual-risks"
+      ],
+      "verify": [],
+      "stopRules": []
+    },
+    "inferredReason": [
+      "default lightweight attestation"
+    ],
+    "criteria": [
+      {
+        "id": "criterion-1",
+        "must": "Return a concise result and residual risks when applicable",
+        "evidence": [
+          "manual-notes",
+          "residual-risks"
+        ],
+        "severity": "required"
+      }
+    ],
+    "runtimeChecks": [
+      {
+        "id": "attestation",
+        "status": "failed",
+        "message": "Structured acceptance report not found."
+      }
+    ],
+    "verifyRuns": [],
+    "childReportParseError": "Structured acceptance report not found."
+  }
+}

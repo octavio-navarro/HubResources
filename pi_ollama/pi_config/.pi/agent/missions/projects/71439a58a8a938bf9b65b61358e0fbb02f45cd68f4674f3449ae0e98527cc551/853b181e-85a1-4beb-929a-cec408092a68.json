@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "853b181e-85a1-4beb-929a-cec408092a68",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "failed",
+  "createdAt": "2026-11-19T15:25:11.604Z",
+  "updatedAt": "2026-11-19T15:25:11.608Z",
+  "runs": [],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-19T15-21-41-616Z_01a1f466-35ef-7373-9e78-4e46451d59c7.jsonl",
+  "summary": "Unknown subagent model 'ollama/llama2:latest' in the active Pi model registry."
+}

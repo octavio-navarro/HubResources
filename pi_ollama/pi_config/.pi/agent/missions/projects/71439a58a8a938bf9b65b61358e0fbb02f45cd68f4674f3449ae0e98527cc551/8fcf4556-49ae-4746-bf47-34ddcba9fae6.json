@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "8fcf4556-49ae-4746-bf47-34ddcba9fae6",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "failed",
+  "createdAt": "2026-11-12T15:52:41.548Z",
+  "updatedAt": "2026-11-12T15:52:41.551Z",
+  "runs": [],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-12T15-34-41-414Z_01a1d065-9806-72af-941b-a90629c3179f.jsonl",
+  "summary": "Unknown subagent model 'gemini-pro' in the active Pi model registry."
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "77fc4e77-dd9e-4a8f-946e-b25b86dc682f",
+  "title": "[prompt redacted]",
+  "objective": "[prompt redacted]",
+  "status": "completed",
+  "createdAt": "2026-11-05T17:58:29.349Z",
+  "updatedAt": "2026-11-05T17:58:47.622Z",
+  "runs": [
+    {
+      "runId": "aba00d23-e55b-4d40-97d6-159dfdda6354",
+      "mode": "single",
+      "asyncDir": "/tmp/pi-subagents-uid-1000/async-subagent-runs/aba00d23-e55b-4d40-97d6-159dfdda6354",
+      "status": "complete",
+      "startedAt": "2026-11-05T17:58:29.356Z",
+      "completedAt": "2026-11-05T17:58:47.622Z",
+      "usage": {
+        "tokens": 3413
+      }
+    }
+  ],
+  "workflowChildren": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "kind": "status",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/aba00d23-e55b-4d40-97d6-159dfdda6354/status.json"
+    },
+    {
+      "kind": "other",
+      "path": "/tmp/pi-subagents-uid-1000/async-subagent-runs/aba00d23-e55b-4d40-97d6-159dfdda6354/events.jsonl",
+      "description": "Lifecycle events"
+    },
+    {
+      "kind": "output",
+      "path": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/subagent-artifacts/aba00d23-e55b-4d40-97d6-159dfdda6354_report-writer_output.md"
+    }
+  ],
+  "receipts": [],
+  "cwd": "/home/hub/agents/manager",
+  "ownerSessionId": "/home/hub/.pi/agent/sessions/--home-hub-agents-manager--/2026-11-05T17-56-50-551Z_01a1acdb-38f6-75b2-8258-50e2ebcfb22c.jsonl",
+  "summary": "report-writer:\n# REPORTE DE SEGURIDAD CRÍTICO\n## Escaneo de /home/hub/agents/manager - Fecha: 2026-11-05\n\n---\n\n## 📌 RESUMEN EJECUTIVO\n| Métrica | Valor | Nivel |\n|---------|-------|-------|\n| **Puntuación de Seguridad** | 35/100 | 🔴 CRÍTICO |\n| **Vulnerabilidades Críticas** | 3 | 🚨 ALERTA |\n| **Vulnerabilidades Medium** | 2 | ⚠️ ATENCIÓN |\n| **Ancho de Escaneo Aplicable** | NIST 800-53, OWASP, ISO 27001 | ✅ |\n\n---\n\n## 🔴 VULNERABILIDADES CRÍTICAS (CVSS ≥7.0)\n\n### CV-01: **Configuración de Acceso No Restablecida**\n- **Nivel de Impacto:** ALTA (8/10)\n- **Riesgo:** El usuario administrador carece de capacidad para restablecer credenciales en caso de compromiso. Esto viola directamente la política NIST 800-53 (AC-2, AC-4).\n- **Evidencia:** Permisos de configuración fijos no permitiendo recuperación de acceso\n\n### CV-02: **Datos Históricos Expos**\n- **Nivel de Impacto:** MEDIA-ALTA (7/10)\n- **Riesgo:** Archivo `security_audit_report.md` contiene información clasificada sin controles de acceso. Viola CUI y ISO 27001 A.13.1.\n- **Evidencia:** Acceso no restringido a auditorías históricas\n\n### CV-03: **Ausencia de cifrado de Datos Sensibles**\n- **Nivel de Impacto:** MUY ALTA (9/10)\n- **Riesgo:** Todo el conjunto de datos se encuentra sin cifrado. Se viola directamente la normativa ISO 27001 A.13.1.4 y NIST SP 800-53 CRP.\n- **Evidencia:** Todos los archivos del sistema son legibles sin medidas de protección\n\n---\n\n## ⚠️ VULNERABILIDADES MEDIUM\n\n### MD-01: **Permisos Globales Demasiado Abiertos**\n- **Riesgo:** Configuraciones de permisos excesivamente permisivas en nivel globales\n- **Criterio:** 8/10 (Media)\n\n### MD-02: **Ausencia de Políticas de Retención**\n- **Riesgo:** Datos sin un ciclo de vida claro, aumentando el riesgo de exposición prolongada\n- **Criterio:** Media\n\n---\n\n## 🛡️ VULNERABILIDAD TÉCNICA CRÍTICA\n\n### `report_topdown.json` - Formato Inválido\n- **Estado:** Fallo en conversión text → JSON\n- **Impacto:** Sistema no puede procesar datos de reporte correctament"
+}

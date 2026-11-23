@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "missionId": "06bdd160-a156-4848-8afb-b5144b02b5fb",
+  "projectRoot": "/home/hub/agents/security-auditor",
+  "recordPath": "/home/hub/.pi/agent/missions/projects/f2b26c67ddcd0dfd4321d4aae6316e50d7c5a112f9a96e3adf11ea872e392f1e/06bdd160-a156-4848-8afb-b5144b02b5fb.json",
+  "title": "[prompt redacted]",
+  "status": "completed",
+  "updatedAt": "2026-11-19T18:15:02.243Z",
+  "lastRunId": "b8250f00-be49-4815-b3ef-f7da4572c2de"
+}
